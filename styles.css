@@ -2,7 +2,14 @@
     text-align: center;
     font-family: 'Pacifico', cursive;
     font-size: 150px;
-    color: white;
+    color: black;
+}
+
+.logoHeader {
+    margin: 0 auto;
+    text-align: center;
+    padding: 75px;
+    width: 20%;
 }
 
 h2 {
@@ -10,30 +17,34 @@ h2 {
     font-family: Arial;
 }
 
-.topButtons {
+.centerButtons {
     padding: 20px;
     text-align: center;
     align-items: center;
 }
 
-button {
+a.button {
     padding: 5px;
     border: none;
     background-color: inherit;
     cursor: pointer;
     font-family: Arial;
     font-size: 25px;
-    display: inline-block;
+
+    text-decoration: none;
+    color: initial;
 }
 
-button:hover {
+a.button:hover {
     color: royalblue;
 }
 
-body {
-    background-color: rgb(255, 187, 0);
+.gallery {
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
 }
 
-.list {
-    background-color: rgb(126, 55, 71);
+body {
+    background-color: rgb(255, 255, 255);
 }
