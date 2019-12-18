@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'interbold';
+    src: url('assets/fonts/Inter/inter-bold-webfont.woff2') format('woff2'),
+         url('assets/fonts/Inter/inter-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #title-logo {
     text-align: center;
     font-family: 'Pacifico', cursive;
@@ -8,29 +16,31 @@
 .logoHeader {
     margin: 0 auto;
     text-align: center;
-    padding: 75px;
-    width: 20%;
+    padding: 50px;
+    max-width: 300px;
 }
 
 h2 {
+    margin: 30px;
     text-align: center;
-    font-family: Arial;
+    font-family: 'interbold', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
 }
 
 .centerButtons {
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     align-items: center;
 }
 
 a.button {
     padding: 5px;
-    border: none;
     background-color: inherit;
     cursor: pointer;
-    font-family: Arial;
+    font-family: 'interbold', Arial, sans-serif;
     font-size: 25px;
-
+    font-weight: normal;
     text-decoration: none;
     color: initial;
 }
@@ -42,7 +52,23 @@ a.button:hover {
 .gallery {
     margin: 0 auto;
     text-align: center;
-    padding: 25px;
+    padding: 20px;
+}
+
+.galleryImage {
+    width: 75%;
+    padding: 5px;
+}
+
+@media screen and (max-width: 850px) {
+    .gallery {
+        padding: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .galleryImage {
+        width: 100%;
+    }
 }
 
 body {
