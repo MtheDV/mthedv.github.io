@@ -1,6 +1,5 @@
 /* scripts for use in website
  * created by mathew de vin
- *
  */
 
 let logoTopLeft = document.querySelector(".logoTopLeft");
