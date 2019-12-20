@@ -21,7 +21,7 @@
 }
 
 h2 {
-    margin: 30px;
+    margin: 25px;
     text-align: center;
     font-family: 'interbold', Arial, sans-serif;
     font-size: 25px;
@@ -56,21 +56,24 @@ a.button:hover {
 }
 
 .galleryImage {
-    width: 75%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
     padding: 5px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
     .gallery {
         padding: 0px;
         padding-top: 20px;
-        padding-bottom: 20px;
     }
     .galleryImage {
+        padding: 0;
         width: 100%;
+        height: auto;
     }
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: white;
 }
