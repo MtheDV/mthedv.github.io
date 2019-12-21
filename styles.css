@@ -14,15 +14,7 @@
 }
 
 .logoTopLeft {
-    position: fixed;
-    top: 20px;
-    left: 40px;
-    width: 7%;
-}
-
-.logoTopLeftOpacity {
-    opacity: 0;
-    
+    cursor: pointer;
     position: fixed;
     top: 20px;
     left: 40px;
