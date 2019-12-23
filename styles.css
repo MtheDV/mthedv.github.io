@@ -19,6 +19,10 @@
     top: 20px;
     left: 40px;
     width: 7%;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+
 }
 
 .logoHeader {
@@ -43,7 +47,7 @@ h2 {
 }
 
 a.button {
-    padding: 5px;
+    padding: 7px;
     background-color: inherit;
     cursor: pointer;
     font-family: 'interbold', Arial, sans-serif;
@@ -58,16 +62,21 @@ a.button:hover {
 }
 
 .gallery {
-    margin: 0 auto;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 .galleryImage {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
     padding: 5px;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
 }
 
 @media screen and (max-width: 800px) {
