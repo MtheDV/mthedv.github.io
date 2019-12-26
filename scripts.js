@@ -6,7 +6,8 @@ let logoTopLeft = document.querySelector(".logoTopLeft");
 let contactButton = document.getElementById("contactButton");
 let worksButton = document.getElementById("worksButton");
 let experimentButton = document.getElementById("experimentButton");
-let gallery = document.querySelectorAll(".gallery");
+let gallery = document.querySelector(".gallery");
+let canvas = document.querySelector(".canvas");
 
 // buttons that direct the window around the page
 // top of page logo button
@@ -21,12 +22,20 @@ contactButton.onclick = function() {
 
 // works section of the page
 worksButton.onclick = function() {
-    document.getElementById("worksGallery").scrollIntoView({behavior: "smooth"});
+    // set the expiremental area to display none
+    canvas.style.display = "none";
+    gallery.style.display = "block";
+
+    document.getElementById("galleryJump").scrollIntoView({behavior: "smooth"});
 }
 
 // exiremental section of the page
 experimentButton.onclick = function() {
-    document.getElementById("experimentalGallery").scrollIntoView({behavior: "smooth"})
+    // set the expiremental area to display none
+    canvas.style.display = "block";
+    gallery.style.display = "none";
+
+    document.getElementById("galleryJump").scrollIntoView({behavior: "smooth"})
 }
 
 // when scrolling past the logo ~200px, the top left logo appears
@@ -37,15 +46,4 @@ window.addEventListener("scroll", function() {
         logoTopLeft.style.opacity = 1.0;
     }
 }, false);
-
-//canvas editing
-/*let mainCanvas = document.querySelector(".mainCanvas");
-let canvas = mainCanvas.getContext("2d");
-
-mainCanvas.width = window.innerWidth * 2;
-mainCanvas.height = window.innerHeight * 2;
-
-canvas.moveTo(0, 0);
-canvas.lineTo(200, 100);
-canvas.stroke();*/
 
