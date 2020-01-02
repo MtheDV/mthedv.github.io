@@ -87,6 +87,9 @@ a.button:hover {
     height: 300px;
     object-fit: cover;
 }
+.galleryImage:hover {
+    object-fit: scale-down;
+}
 
 .canvas {
     display: none;
