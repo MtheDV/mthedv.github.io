@@ -7,6 +7,7 @@ let hamburgerButton = document.querySelector(".hamburger_button");
 let headerButtons = document.querySelector(".headerButtons");
 let header = document.querySelector("header");
 let contactButton = document.getElementById("contactButton");
+let contactButtons = document.querySelector(".contactButtons");
 let worksButton = document.getElementById("worksButton");
 let experimentButton = document.getElementById("experimentButton");
 let gallery = document.querySelector(".gallery");
@@ -48,12 +49,27 @@ window.addEventListener("resize", function() {
     if (window.innerWidth >= 650) {
         headerButtons.style.display = "block";
         headerButtons.style.top = "20px"
+        contactButtons.style.display = "none";
+        contactButtons.style.position = "fixed";
+    } else {
+        contactButtons.style.display = "block";
+        contactButtons.style.position = "relative";
     }
 }, false);
 
 // contacts / bottom of page
 contactButton.onclick = function() {
-    document.getElementById("contactLinks").scrollIntoView({behavior: "smooth"});
+    if (window.innerWidth >= 650) {
+        if (contactButtons.style.display == "none") {
+            contactButtons.style.display = "block";
+            header.style.height = "150px";
+        } else {
+            contactButtons.style.display = "none";
+            header.style.height = "75px";
+        }
+    } else {
+        document.getElementById("contactLinks").scrollIntoView({behavior: "smooth"});
+    }
 }
 
 // works section of the page
@@ -76,19 +92,19 @@ experimentButton.onclick = function() {
 
 // tabs to show works
 
-// const warp = new Warp(titleImage);
+const warp = new Warp(titleImage);
 
-// warp.interpolate(4);
-// warp.transform(([x, y]) => [x, y, y]);
+warp.interpolate(4);
+warp.transform(([x, y]) => [x, y, y]);
 
-// let offset = 0;
-// function animate() {
-//     warp.transform(([x, y, oy]) => [x, oy + 4 * Math.sin(x / 16 + offset), oy]);
-//     offset += 0.1;
-//     requestAnimationFrame(animate);
-// }
+let offset = 0;
+function animate() {
+    warp.transform(([x, y, oy]) => [x, oy + 4 * Math.sin(x / 16 + offset), oy]);
+    offset += 0.1;
+    requestAnimationFrame(animate);
+}
 
-// animate();
+animate();
 
 // when scrolling past the logo ~200px, the top left logo appears
 window.addEventListener("scroll", function() {

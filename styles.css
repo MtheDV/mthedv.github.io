@@ -33,9 +33,9 @@ header {
     display: none;
     position: fixed;
     cursor: pointer;
-    width: 40px;
-    top: 17px;
-    right: 30px;
+    width: 35px;
+    top: 21px;
+    right: 37px;
 }
 
 a.button {
@@ -95,8 +95,12 @@ h2 {
     object-fit: scale-down;
 }
 
-.centerButtons {
-    text-align: center;
+.contactButtons {
+    display: none;
+    position: fixed;
+    right: 10px;
+    top: 70px;
+    text-align: right;
     padding: 20px;
 }
 
@@ -149,6 +153,11 @@ h2 {
         padding: 0;
         width: 100%;
         height: auto;
+    }
+    .contactButtons {
+        position: relative;
+        display: block;
+        text-align: center;
     }
     .canvas {
         padding: 0;
