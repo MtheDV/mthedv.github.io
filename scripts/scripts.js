@@ -13,6 +13,7 @@ let experimentButton = document.getElementById("experimentButton");
 let gallery = document.querySelector(".gallery");
 let canvas = document.querySelector(".canvas");
 let titleImage = document.querySelector(".logoImage");
+let testGalleryImage1 = document.querySelector(".galleryImage1");
 
 // buttons that direct the window around the page
 // top of page logo button
@@ -24,14 +25,14 @@ logoTopLeft.onclick = function() {
 let closeMenu = function() {
     headerButtons.style.display = "none";
     hamburgerButton.style.rotate = "0deg";
-    header.style.height = "75px";
+    header.style.height = "65px";
 }
 
 let openMenu = function() {
     headerButtons.style.display = "block";
     hamburgerButton.style.rotate = "90deg";
     headerButtons.style.top = "70px"
-    header.style.height = "250px";
+    header.style.height = "230px";
 }
 
 // hamburger button
@@ -48,7 +49,7 @@ window.addEventListener("resize", function() {
     closeMenu();
     if (window.innerWidth >= 650) {
         headerButtons.style.display = "block";
-        headerButtons.style.top = "20px"
+        headerButtons.style.top = "15px"
         contactButtons.style.display = "none";
         contactButtons.style.position = "fixed";
     } else {
@@ -62,10 +63,10 @@ contactButton.onclick = function() {
     if (window.innerWidth >= 650) {
         if (contactButtons.style.display == "none") {
             contactButtons.style.display = "block";
-            header.style.height = "150px";
+            header.style.height = "125px";
         } else {
             contactButtons.style.display = "none";
-            header.style.height = "75px";
+            header.style.height = "65px";
         }
     } else {
         document.getElementById("contactLinks").scrollIntoView({behavior: "smooth"});
@@ -90,36 +91,34 @@ experimentButton.onclick = function() {
     document.getElementById("galleryJump").scrollIntoView({behavior: "smooth"})
 }
 
-// tabs to show works
+var lastScrollPosition = this.window.scrollY;
 
-const warp = new Warp(titleImage);
-
-warp.interpolate(4);
-warp.transform(([x, y]) => [x, y, y]);
-
-let offset = 0;
-function animate() {
-    warp.transform(([x, y, oy]) => [x, oy + 4 * Math.sin(x / 16 + offset), oy]);
-    offset += 0.1;
-    requestAnimationFrame(animate);
+function updateImages() {
+    if (lastScrollPosition != this.window.scrollY) {
+        lastScrollPosition = this.window.scrollY;
+        testGalleryImage1.style.top = (lastScrollPosition) + "px";
+    }
 }
+updateImages();
 
-animate();
+// function setupImageUpdating() {
+//     lastScrollPosition = document.body.scrollTop;
+//     setInterval(updateImages, 1000 / 60);
+// }
+// window.addEventListener("DOMContentLoaded", setupImageUpdating);
 
 // when scrolling past the logo ~200px, the top left logo appears
-window.addEventListener("scroll", function() {
-    if (this.window.pageYOffset < 200) {
-        logoTopLeft.style.opacity = 1.0;
-    } else {
-        logoTopLeft.style.opacity = 1.0;
-    }
-}, false);
+// window.addEventListener("scroll", function() {
+//     testGalleryImage1.style.top = (this.window.scrollY) + "px";
+// }, false);
+
+
 
 // // mouse moving
 // window.addEventListener("mousemove", function() {
 //     let mouseX = this.event.pageX;
 //     let mouseY = this.event.pageY;
 
-//     titleImage.style.top = mouseY + "px";
+//     testGalleryImage1.style.top = mouseY + "px";
 // }, false);
 
