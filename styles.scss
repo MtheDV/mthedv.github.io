@@ -82,7 +82,9 @@ a.button:hover {
 
 .introBackground {
     position: fixed;
-    width: 120%;
+    width: 120vw;
+    height: 120vh;
+    object-fit: cover;
     top: -50%;
     filter: blur(3px);
     transition-duration: 20ms;
