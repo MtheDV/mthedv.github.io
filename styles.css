@@ -1,170 +1,206 @@
 * {
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: white;
+  background-color: white;
 }
 
 header {
-    position: fixed;
-    background-color: yellow;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 65px;
+  position: fixed;
+  background-color: yellow;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 65px;
 }
 
 .logoTopLeft {
-    cursor: pointer;
-    position: fixed;
-    top: 7px;
-    left: 30px;
-    width: 75px;
+  cursor: pointer;
+  position: fixed;
+  top: 7px;
+  left: 30px;
+  width: 75px;
 }
 
 .headerButtons {
-    display: block;
-    position: fixed;
-    text-align: right;
-    top: 15px;
-    right: 30px;
+  display: block;
+  position: fixed;
+  text-align: right;
+  top: 15px;
+  right: 30px;
 }
 
 .hamburger_button {
-    display: none;
-    position: fixed;
-    cursor: pointer;
-    width: 30px;
-    top: 20px;
-    right: 37px;
+  display: none;
+  position: fixed;
+  cursor: pointer;
+  width: 30px;
+  top: 20px;
+  right: 37px;
 }
 
 a.button {
-    padding: 15px;
-    background-color: inherit;
-    cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 21px;
-    color: black;
-    text-decoration: none;
+  padding: 15px;
+  background-color: inherit;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 21px;
+  color: black;
+  text-decoration: none;
 }
 
 a.button:hover {
-    color: royalblue;
+  color: royalblue;
 }
 
-.logoHeader {
-    margin: auto;
-    margin-top: 100px;
-    text-align: center;
-    padding: 40px;
-    max-width: 175px;
+.introRect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid 2em black;
+}
+
+.introLogo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 8em;
+}
+
+.introBackground {
+  position: fixed;
+  width: 120%;
+  top: -50%;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  -webkit-transition-duration: 20ms;
+          transition-duration: 20ms;
 }
 
 h2 {
-    padding: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 65px;
-    text-align: center;
-    max-width: 400px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 25px;
-    font-weight: normal;
+  padding: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 65px;
+  text-align: center;
+  max-width: 400px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  font-weight: normal;
 }
 
 .galleryImage1 {
-    width: 30%;
-    position: relative;
-    left: 120px;
+  width: 30%;
+  position: relative;
+  left: 120px;
 }
 
 .gallery {
-    font-size: 0;
-    padding: 30px;
+  font-size: 0;
+  padding: 30px;
 }
 
 .galleryMin {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .galleryTitle {
-    writing-mode: sideways-lr;
+  -webkit-writing-mode: sideways-lr;
+      -ms-writing-mode: sideways-lr;
+          writing-mode: sideways-lr;
 }
 
 .galleryImage {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .galleryImage:hover {
-    object-fit: scale-down;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 
 .contactButtons {
-    display: none;
-    position: fixed;
-    right: 10px;
-    top: 50px;
-    text-align: right;
-    padding: 20px;
+  display: none;
+  position: fixed;
+  right: 10px;
+  top: 50px;
+  text-align: right;
+  padding: 20px;
 }
 
 .canvas {
-    display: none;
-    text-align: center;
-    padding: 15px;
+  display: none;
+  text-align: center;
+  padding: 15px;
 }
 
 .testCanvas1 {
-    width: 100%;
-    height: 100%;
-    background-color: lightgrey;
+  width: 100%;
+  height: 100%;
+  background-color: lightgrey;
 }
 
 @media screen and (max-width: 650px) {
-    a.button {
-        display: block;
-        padding: 10px;
-    }
-    .hamburger_button {
-        display: block;
-    }
-    .headerButtons {
-        display: none;
-    }
-    .galleryImage1 {
-        width: 100%;
-    }
-    .gallery {
-        padding: 0px;
-        padding-top: 20px;
-    }
-    .galleryMin {
-        display: block;
-    }
-    .galleryImage {
-        padding: 0;
-        width: 100%;
-        height: auto;
-    }
-    .contactButtons {
-        position: relative;
-        display: block;
-        text-align: center;
-    }
-    .canvas {
-        padding: 0;
-        padding-top: 5px;
-    }
+  a.button {
+    display: block;
+    padding: 10px;
+  }
+  .hamburger_button {
+    display: block;
+  }
+  .headerButtons {
+    display: none;
+  }
+  .galleryImage1 {
+    width: 100%;
+  }
+  .gallery {
+    padding: 0px;
+    padding-top: 20px;
+  }
+  .galleryMin {
+    display: block;
+  }
+  .galleryImage {
+    padding: 0;
+    width: 100%;
+    height: auto;
+  }
+  .contactButtons {
+    position: relative;
+    display: block;
+    text-align: center;
+  }
+  .canvas {
+    padding: 0;
+    padding-top: 5px;
+  }
 }
+/*# sourceMappingURL=styles.css.map */

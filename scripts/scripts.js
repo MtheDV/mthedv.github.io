@@ -2,7 +2,7 @@
  * created by mathew de vin
  */
 
-let logoTopLeft = document.querySelector(".logoTopLeft");
+/*let logoTopLeft = document.querySelector(".logoTopLeft");
 let hamburgerButton = document.querySelector(".hamburger_button");
 let headerButtons = document.querySelector(".headerButtons");
 let header = document.querySelector("header");
@@ -99,26 +99,23 @@ function updateImages() {
         testGalleryImage1.style.top = (lastScrollPosition) + "px";
     }
 }
-updateImages();
+updateImages();*/
 
-// function setupImageUpdating() {
-//     lastScrollPosition = document.body.scrollTop;
-//     setInterval(updateImages, 1000 / 60);
-// }
-// window.addEventListener("DOMContentLoaded", setupImageUpdating);
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
-// when scrolling past the logo ~200px, the top left logo appears
-// window.addEventListener("scroll", function() {
-//     testGalleryImage1.style.top = (this.window.scrollY) + "px";
-// }, false);
+let elem = document.querySelector(".introBackground");
 
+function parallax(e) {
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let mouseX = e.clientX;
+    let mouseY = e.clientY;
+    let top = -1 * (50 - (mouseY - height) * 0.01) + 50;
+    let left = -1 * (50 - (mouseX - width) * 0.01) + 50;
+    elem.style.top = top + "%";
+    elem.style.left = left + "%";
+}
 
-
-// // mouse moving
-// window.addEventListener("mousemove", function() {
-//     let mouseX = this.event.pageX;
-//     let mouseY = this.event.pageY;
-
-//     testGalleryImage1.style.top = mouseY + "px";
-// }, false);
+window.addEventListener("mousemove", parallax);
 
