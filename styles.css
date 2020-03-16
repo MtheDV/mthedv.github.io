@@ -97,8 +97,9 @@ body {
   position: relative;
   width: 40%;
   height: auto;
+  padding-bottom: 10%;
   left: 10%;
-  top: 8em;
+  top: 2%;
 }
 
 .sampleText {
@@ -107,20 +108,31 @@ body {
   word-wrap: normal;
   font-size: 170%;
   left: 55%;
-  top: 30%;
+  top: 5%;
 }
 
 .sampleTitle {
-  position: fixed;
-  width: 35%;
-  font-size: 250%;
+  position: relative;
+  font-size: 3em;
   font-weight: bolder;
+  text-align: left;
   left: 10%;
-  top: 5%;
+  top: .5em;
 }
 
 h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
+}
+
+@media screen and (max-width: 800px) {
+  .sampleImage {
+    width: 90%;
+    left: 5%;
+  }
+  .sampleTitle {
+    text-align: center;
+    left: 0;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

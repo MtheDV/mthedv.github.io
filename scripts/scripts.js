@@ -137,7 +137,9 @@ window.addEventListener("mousedown", function() {
 
 function unloadAll() {
     intro.style.opacity = "0.0";
+    intro.style.display = "none";
     gallery.style.opacity = "0.0";
+    gallery.style.display = "none";
 }
 
 function loadIntro() {
@@ -145,6 +147,7 @@ function loadIntro() {
     // load page zero, intro
     page = 0;
     intro.style.opacity = "1.0";
+    intro.style.display = "block";
 }
 
 function loadGallery() {
@@ -152,6 +155,7 @@ function loadGallery() {
     // load page one, gallery
     page = 1;
     gallery.style.opacity = "1.0";
+    gallery.style.display = "block";
 }
 
 
