@@ -104,7 +104,16 @@ updateImages();*/
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-let elem = document.querySelector(".introBackground");
+let backgroundParr = document.querySelector(".introBackground");
+let intro = document.querySelector(".intro");
+let gallery = document.querySelector(".gallery");
+let loading = document.querySelector(".loading");
+
+let page = 0;
+
+window.addEventListener("load", function() {
+    loadIntro();
+})
 
 function parallax(e) {
     let width = window.innerWidth;
@@ -113,9 +122,36 @@ function parallax(e) {
     let mouseY = e.clientY;
     let top = -1 * (50 - (mouseY - height) * 0.01) + 50;
     let left = -1 * (50 - (mouseX - width) * 0.01) + 50;
-    elem.style.top = top + "%";
-    elem.style.left = left + "%";
+    backgroundParr.style.top = top + "%";
+    backgroundParr.style.left = left + "%";
+}
+window.addEventListener("mousemove", parallax);
+
+window.addEventListener("mousedown", function() {
+    if (page == 0) {
+        loadGallery();
+    } else if (page == 1) {
+        loadIntro();
+    }
+}, true);
+
+function unloadAll() {
+    intro.style.opacity = "0.0";
+    gallery.style.opacity = "0.0";
 }
 
-window.addEventListener("mousemove", parallax);
+function loadIntro() {
+    unloadAll();
+    // load page zero, intro
+    page = 0;
+    intro.style.opacity = "1.0";
+}
+
+function loadGallery() {
+    unloadAll();
+    // load page one, gallery
+    page = 1;
+    gallery.style.opacity = "1.0";
+}
+
 
