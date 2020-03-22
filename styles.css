@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700&display=swap");
 * {
   transition: all .3s;
   -webkit-transition: all .3s;
@@ -12,32 +13,10 @@ body {
   background-color: white;
 }
 
-.introRect {
+.background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: solid 2em white;
-  z-index: 10;
-}
-
-.introLogo {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  max-width: 8em;
-}
-
-.introBackground {
-  position: fixed;
-  width: 115%;
-  height: 115%;
+  width: 120%;
+  height: 120%;
   -o-object-fit: cover;
      object-fit: cover;
   top: -50%;
@@ -48,76 +27,112 @@ body {
   z-index: 0;
 }
 
-.whiteBackgroundT {
+.whiteBackground {
   position: fixed;
+  top: 0;
+  left: 0;
   background-color: white;
-  width: 100%;
+  width: 12em;
   height: 100%;
-  -webkit-clip-path: inset(0% 0% 75%);
-          clip-path: inset(0% 0% 75%);
 }
 
-.whiteBackgroundL {
+.logo {
   position: fixed;
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  -webkit-clip-path: inset(0% 0% 0% 80%);
-          clip-path: inset(0% 0% 0% 80%);
+  top: 2em;
+  left: 3em;
+  margin: auto;
+  width: 6em;
 }
 
-.whiteBackgroundR {
+.navigationTabs {
   position: fixed;
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  -webkit-clip-path: inset(0% 80% 0% 0%);
-          clip-path: inset(0% 80% 0% 0%);
+  top: 8em;
+  left: 0;
+  width: 12em;
+  text-align: center;
 }
 
-.whiteBackgroundB {
+.projectsNavigation {
+  display: none;
+}
+
+.randomNavigation {
+  display: none;
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  cursor: pointer;
+  margin: 0;
+  opacity: 1.0;
+}
+
+h3:hover {
+  opacity: 0.5;
+}
+
+h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: .25em;
+  opacity: 1.0;
+}
+
+h4:hover {
+  opacity: 0.5;
+}
+
+.contactButtons {
   position: fixed;
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  -webkit-clip-path: inset(75% 0% 0%);
-          clip-path: inset(75% 0% 0%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 8em;
+  height: 3em;
+  bottom: 2.5em;
+  left: 2em;
+  cursor: pointer;
 }
 
-.introName {
-  position: fixed;
-  font-family: "Playfair Display", serif;
-  font-size: 90px;
-  font-weight: 100;
-  left: 17%;
-  top: 8%;
+.instagram:hover {
+  opacity: 0.5;
 }
 
-.sampleImage {
+.mail:hover {
+  opacity: 0.5;
+}
+
+.galleryImage {
   position: relative;
-  width: 40%;
+  width: 38em;
   height: auto;
-  padding-bottom: 10%;
-  left: 10%;
-  top: 2%;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  left: 17em;
 }
 
-.sampleText {
-  position: relative;
+.galleryTitle {
+  position: fixed;
+  font-size: 4em;
+  font-weight: bold;
+  text-align: left;
+  left: 15em;
+  top: 2em;
+}
+
+.galleryText {
+  position: fixed;
   width: 35%;
   word-wrap: normal;
-  font-size: 170%;
-  left: 55%;
-  top: 5%;
-}
-
-.sampleTitle {
-  position: relative;
-  font-size: 3em;
-  font-weight: bolder;
-  text-align: left;
-  left: 10%;
-  top: .5em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+  left: 30.25em;
+  top: 8em;
 }
 
 h2 {
@@ -125,14 +140,67 @@ h2 {
   font-weight: normal;
 }
 
-@media screen and (max-width: 800px) {
-  .sampleImage {
-    width: 90%;
-    left: 5%;
+@media screen and (max-width: 1350px) {
+  .galleryTitle {
+    position: fixed;
+    left: 4.3em;
+    top: 0em;
   }
-  .sampleTitle {
-    text-align: center;
+  .galleryText {
+    left: 8.75em;
+    top: 3.5em;
+  }
+  .galleryImage {
+    width: 55%;
+    top: 8em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .whiteBackground {
+    width: 100%;
+  }
+  .logo {
+    position: relative;
     left: 0;
+    top: 0;
+    width: 100%;
+    height: 6em;
+    margin: 3em auto 1em auto;
+  }
+  .navigationTabs {
+    position: relative;
+    width: 100%;
+    top: 0;
+  }
+  .contactButtons {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 4em;
+    margin: 1em auto 2em auto;
+  }
+  .galleryTitle {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0.5em auto 0em auto;
+  }
+  .galleryText {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0em auto .5em auto;
+  }
+  .galleryImage {
+    position: relative;
+    width: 100%;
+    padding-top: 0em;
+    padding-bottom: 1em;
+    left: 0;
+    top: 0;
   }
 }
 /*# sourceMappingURL=styles.css.map */
