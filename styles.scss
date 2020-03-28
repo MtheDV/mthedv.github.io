@@ -14,207 +14,148 @@ body {
     background-color: white;
 }
 
-.background {
-    position: fixed;
-    width: 120%;
-    height: 120%;
-    object-fit: cover;
-    top: -50%;
-
-    filter: blur(10px);
-    transition-duration: 20ms;
-
-    z-index: 0;
-}
-
-.whiteBackground {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: white;
-    width: 12em;
-    height: 100%;
+header {
+    z-index: 10;
 }
 
 .logo {
     position: fixed;
-    top: 2em;
-    left: 3em;
-    margin: auto;
-
-    width: 6em;
-}
-
-.navigationTabs {
-    position: fixed;
-    top: 8em;
     left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 1.5em;
+    height: 3.5em;
+    width: auto;
+    cursor: pointer;
 
-    width: 12em;
+    z-index: 11;
+}
+
+.header_buttons {
+    position: fixed;
+    left: 0;
+    right: 0;
     text-align: center;
+    top: 2.5em;
+
+    z-index: inherit;
 }
 
-.projectsNavigation {
-    display: none;
-}
-.randomNavigation {
-    display: none;
-}
-
-h3 {
+a {
     font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    font-size: 2em;
-
-    cursor: pointer;
-    margin: 0;
-
-    opacity: 1.0;
-    &:hover {
-        opacity: 0.5;
-    }
-}
-h4 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.5em;
+    margin-left: 4em;
+    margin-right: 4em;
 
     cursor: pointer;
-    margin: .25em;
 
-    opacity: 1.0;
     &:hover {
-        opacity: 0.5;
+        color: dodgerblue;
     }
 }
 
-.contactButtons {
-    position: fixed;
-    display: flex;
-
-    width: 8em;
-    height: 3em;
-    bottom: 2.5em;
-    left: 2em;
-    
-    cursor: pointer;
-}
-.instagram:hover {
-    opacity: 0.5;
-}
-.mail:hover {
-    opacity: 0.5;
-}
-
-.galleryImage {
-    position: relative;
-    width: 38em;
-    height: auto;
-
-    padding-top: 4em;
-    padding-bottom: 4em;
-    
-    left: 17em;
-}
-
-.galleryTitle {
-    position: fixed;
-
-    font-size: 4em;
-    font-weight: bold;
-    text-align: left;
-
-    left: 15em;
-    top: 2em;
-}
-
-.galleryText {
-    position: fixed;
-    width: 35%;
-
-    word-wrap: normal;
+h1 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 2em;
+    font-weight: 700;
+    font-size: 3em;
+    margin-left: 1em;
+}
 
-    left: 30.25em;
-    top: 8em;
+.parallax_background {
+    position: fixed;
+    opacity: 1.0;
+}
+
+.background_circle {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: dodgerblue;
+    width: 30em;
+    height: 30em;
+    border-radius: 50%;
+
+    transition-duration: 20ms;
+    z-index: 0;
+}
+
+.background_text {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    width: 15em;
+    color: white;
+    background-color: black;
+
+    transition-duration: 20ms;
+    z-index: 1;
+}
+
+.background_mountains {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75em;
+
+    transition-duration: 20ms;
+    z-index: 2
+}
+
+.gallery {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 7em;
+    flex-basis: 80em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    opacity: 0.0;
+}
+
+.gallery_block {
+    width: 15em;
+    min-width: 15em;
+    height: 25em;
+    border-radius: 2em;
+    background-color: dodgerblue;
+    background-position: center;
+    flex-basis: 20%;
+    margin: 1em;
+    margin-bottom: 2em;
 }
 
 h2 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: normal;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-left: 1em;
 }
 
-@media screen and (max-width: 1350px) {
-    .galleryTitle {
-        position: fixed;
-
-        left: 4.3em;
-        top: 0em;
-    }
-    .galleryText {
-        left: 8.75em;
-        top: 3.5em;
-    }
-    .galleryImage {
-        width: 55%;
-        top: 8em;
-    }
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin-left: 1em;
+    margin-right: 1em;
 }
-@media screen and (max-width: 750px) {
-    .whiteBackground {
-        width: 100%;
-    }
-    .logo {
-        position: relative;
-        
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 6em;
 
-        margin: 3em auto 1em auto;
-    }
-    .navigationTabs {
-        position: relative;
-        width: 100%;
-        top: 0;
-    }
-    .contactButtons {
-        position: relative;
-
-        left: 0;
-        top: 0;
-        height: 4em;
-
-        margin: 1em auto 2em auto;
-    }
-    .galleryTitle {
-        position: relative;
-
-        width: 100%;
-        top: 0;
-        left: 0;
-
-        margin: 0.5em auto 0em auto;
-    }
-    .galleryText {
-        position: relative;
-
-        width: 100%;
-        top: 0;
-        left: 0;
-        
-        margin: 0em auto .5em auto;
-    }
-    .galleryImage {
-        position: relative;
-
-        width: 100%;
-        padding-top: 0em;
-        padding-bottom: 1em;
-        left: 0;
-        top: 0;
-    }
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 200%;
+    width: 100%;
+    height: 4em;
+    background-color: dodgerblue;
 }
+
+

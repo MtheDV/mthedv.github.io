@@ -13,194 +13,151 @@ body {
   background-color: white;
 }
 
-.background {
+header {
+  z-index: 10;
+}
+
+.logo {
   position: fixed;
-  width: 120%;
-  height: 120%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  top: -50%;
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 1.5em;
+  height: 3.5em;
+  width: auto;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.header_buttons {
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 2.5em;
+  z-index: inherit;
+}
+
+a {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-left: 4em;
+  margin-right: 4em;
+  cursor: pointer;
+}
+
+a:hover {
+  color: dodgerblue;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 3em;
+  margin-left: 1em;
+}
+
+.parallax_background {
+  position: fixed;
+  opacity: 1.0;
+}
+
+.background_circle {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: dodgerblue;
+  width: 30em;
+  height: 30em;
+  border-radius: 50%;
   -webkit-transition-duration: 20ms;
           transition-duration: 20ms;
   z-index: 0;
 }
 
-.whiteBackground {
+.background_text {
   position: fixed;
-  top: 0;
   left: 0;
-  background-color: white;
-  width: 12em;
-  height: 100%;
-}
-
-.logo {
-  position: fixed;
-  top: 2em;
-  left: 3em;
+  right: 0;
   margin: auto;
-  width: 6em;
-}
-
-.navigationTabs {
-  position: fixed;
-  top: 8em;
-  left: 0;
-  width: 12em;
   text-align: center;
+  width: 15em;
+  color: white;
+  background-color: black;
+  -webkit-transition-duration: 20ms;
+          transition-duration: 20ms;
+  z-index: 1;
 }
 
-.projectsNavigation {
-  display: none;
-}
-
-.randomNavigation {
-  display: none;
-}
-
-h3 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  font-size: 2em;
-  cursor: pointer;
-  margin: 0;
-  opacity: 1.0;
-}
-
-h3:hover {
-  opacity: 0.5;
-}
-
-h4 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 1.5em;
-  cursor: pointer;
-  margin: .25em;
-  opacity: 1.0;
-}
-
-h4:hover {
-  opacity: 0.5;
-}
-
-.contactButtons {
+.background_mountains {
   position: fixed;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75em;
+  -webkit-transition-duration: 20ms;
+          transition-duration: 20ms;
+  z-index: 2;
+}
+
+.gallery {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7em;
+  -ms-flex-preferred-size: 80em;
+      flex-basis: 80em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 8em;
-  height: 3em;
-  bottom: 2.5em;
-  left: 2em;
-  cursor: pointer;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  opacity: 0.0;
 }
 
-.instagram:hover {
-  opacity: 0.5;
-}
-
-.mail:hover {
-  opacity: 0.5;
-}
-
-.galleryImage {
-  position: relative;
-  width: 38em;
-  height: auto;
-  padding-top: 4em;
-  padding-bottom: 4em;
-  left: 17em;
-}
-
-.galleryTitle {
-  position: fixed;
-  font-size: 4em;
-  font-weight: bold;
-  text-align: left;
-  left: 15em;
-  top: 2em;
-}
-
-.galleryText {
-  position: fixed;
-  width: 35%;
-  word-wrap: normal;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 2em;
-  left: 30.25em;
-  top: 8em;
+.gallery_block {
+  width: 15em;
+  min-width: 15em;
+  height: 25em;
+  border-radius: 2em;
+  background-color: dodgerblue;
+  background-position: center;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  margin: 1em;
+  margin-bottom: 2em;
 }
 
 h2 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-left: 1em;
 }
 
-@media screen and (max-width: 1350px) {
-  .galleryTitle {
-    position: fixed;
-    left: 4.3em;
-    top: 0em;
-  }
-  .galleryText {
-    left: 8.75em;
-    top: 3.5em;
-  }
-  .galleryImage {
-    width: 55%;
-    top: 8em;
-  }
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
-@media screen and (max-width: 750px) {
-  .whiteBackground {
-    width: 100%;
-  }
-  .logo {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 6em;
-    margin: 3em auto 1em auto;
-  }
-  .navigationTabs {
-    position: relative;
-    width: 100%;
-    top: 0;
-  }
-  .contactButtons {
-    position: relative;
-    left: 0;
-    top: 0;
-    height: 4em;
-    margin: 1em auto 2em auto;
-  }
-  .galleryTitle {
-    position: relative;
-    width: 100%;
-    top: 0;
-    left: 0;
-    margin: 0.5em auto 0em auto;
-  }
-  .galleryText {
-    position: relative;
-    width: 100%;
-    top: 0;
-    left: 0;
-    margin: 0em auto .5em auto;
-  }
-  .galleryImage {
-    position: relative;
-    width: 100%;
-    padding-top: 0em;
-    padding-bottom: 1em;
-    left: 0;
-    top: 0;
-  }
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 200%;
+  width: 100%;
+  height: 4em;
+  background-color: dodgerblue;
 }
 /*# sourceMappingURL=styles.css.map */
