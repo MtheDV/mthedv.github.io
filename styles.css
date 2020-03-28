@@ -111,8 +111,6 @@ h1 {
   left: 0;
   right: 0;
   top: 7em;
-  -ms-flex-preferred-size: 80em;
-      flex-basis: 80em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

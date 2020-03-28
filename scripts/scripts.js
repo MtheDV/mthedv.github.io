@@ -40,22 +40,26 @@ window.addEventListener("mousemove", parallax);
 let parallaxBackground = document.querySelector(".parallax_background");
 let gallery = document.querySelector(".gallery");
 
-function animateOut() {
-    return "0.0";
+function animateOut(element) {
+    element.style.opacity = "0.0";
+    setTimeout(function() {
+        element.style.display = "none";
+    }, 350);
 }
-function animateIn() {
-    return "1.0";
+function animateIn(element) {
+    element.style.opacity = "1.0";
+    element.style.display = "block";
 }
 
 let projectsButton = document.querySelector(".projects_button");
 let logoButton = document.querySelector(".logo");
 
 projectsButton.onclick = function() {
-    parallaxBackground.style.opacity = animateOut();
-    gallery.style.opacity = animateIn();
+    animateOut(parallaxBackground);
+    animateIn(gallery);
 }
 logoButton.onclick = function() {
-    parallaxBackground.style.opacity = animateIn();
-    gallery.style.opacity = animateOut();
+    animateOut(gallery);
+    animateIn(parallaxBackground);
 }
 
