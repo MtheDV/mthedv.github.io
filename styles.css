@@ -52,6 +52,11 @@ a:hover {
   color: dodgerblue;
 }
 
+#contact_button {
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
 h1 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -59,7 +64,14 @@ h1 {
   margin-left: 1em;
 }
 
-.parallax_background {
+.parallax_background_home {
+  display: block;
+  position: fixed;
+  opacity: 1.0;
+}
+
+.parallax_background_contact {
+  display: none;
   position: fixed;
   opacity: 1.0;
 }
@@ -71,7 +83,6 @@ h1 {
   top: 0;
   bottom: 0;
   margin: auto;
-  background-color: dodgerblue;
   width: 30em;
   height: 30em;
   border-radius: 50%;
@@ -80,13 +91,19 @@ h1 {
   z-index: 0;
 }
 
+#blue_circle {
+  background-color: dodgerblue;
+}
+
+#orange_circle {
+  background-color: orange;
+}
+
 .background_text {
   position: fixed;
   left: 0;
   right: 0;
   margin: auto;
-  text-align: center;
-  width: 15em;
   color: white;
   background-color: black;
   -webkit-transition-duration: 20ms;
@@ -94,7 +111,18 @@ h1 {
   z-index: 1;
 }
 
-.background_mountains {
+#home_text {
+  text-align: center;
+  width: 15em;
+}
+
+#contact_text {
+  text-align: left;
+  width: 9em;
+  font-size: 2em;
+}
+
+.background_image {
   position: fixed;
   left: 0;
   right: 0;
@@ -106,33 +134,49 @@ h1 {
   z-index: 2;
 }
 
-.gallery {
-  position: absolute;
+#background_mountains {
   left: 0;
   right: 0;
-  top: 7em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  width: 75em;
+}
+
+#background_clouds {
+  left: 20%;
+  right: 0;
+  width: 48em;
+}
+
+.gallery {
+  position: fixed;
+  left: 5%;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  height: 100%;
   opacity: 0.0;
+  color: white;
+  white-space: nowrap;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
 }
 
 .gallery_block {
-  width: 15em;
-  min-width: 15em;
-  height: 25em;
-  border-radius: 2em;
-  background-color: dodgerblue;
-  background-position: center;
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-  margin: 1em;
-  margin-bottom: 2em;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 15%;
+  height: 70%;
+  background-color: black;
+  margin: 3em;
+}
+
+.gallery_image {
+  height: 60%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 h2 {
