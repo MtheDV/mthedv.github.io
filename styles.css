@@ -42,19 +42,14 @@ header {
 a {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  font-size: 1.5em;
-  margin-left: 4em;
-  margin-right: 4em;
+  font-size: 3em;
+  margin-left: .5em;
+  margin-right: .5em;
   cursor: pointer;
 }
 
 a:hover {
   color: dodgerblue;
-}
-
-#contact_button {
-  margin-left: .5em;
-  margin-right: .5em;
 }
 
 h1 {
@@ -64,14 +59,8 @@ h1 {
   margin-left: 1em;
 }
 
-.parallax_background_home {
+.parallax {
   display: block;
-  position: fixed;
-  opacity: 1.0;
-}
-
-.parallax_background_contact {
-  display: none;
   position: fixed;
   opacity: 1.0;
 }
@@ -86,17 +75,9 @@ h1 {
   width: 30em;
   height: 30em;
   border-radius: 50%;
+  background-color: dodgerblue;
   -webkit-transition-duration: 20ms;
           transition-duration: 20ms;
-  z-index: 0;
-}
-
-#blue_circle {
-  background-color: dodgerblue;
-}
-
-#orange_circle {
-  background-color: orange;
 }
 
 .background_text {
@@ -106,74 +87,107 @@ h1 {
   margin: auto;
   color: white;
   background-color: black;
-  -webkit-transition-duration: 20ms;
-          transition-duration: 20ms;
-  z-index: 1;
-}
-
-#home_text {
   text-align: center;
   width: 15em;
+  -webkit-transition-duration: 20ms;
+          transition-duration: 20ms;
 }
 
-#contact_text {
+.background_links {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  background-color: black;
   text-align: left;
-  width: 9em;
-  font-size: 2em;
+  width: 18em;
+  -webkit-transition-duration: 20ms;
+          transition-duration: 20ms;
+}
+
+.background_works {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  background-color: black;
+  text-align: center;
+  width: 13em;
+  -webkit-transition-duration: 20ms;
+          transition-duration: 20ms;
 }
 
 .background_image {
   position: fixed;
   left: 0;
   right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75em;
+  margin: auto;
   -webkit-transition-duration: 20ms;
           transition-duration: 20ms;
-  z-index: 2;
 }
 
-#background_mountains {
-  left: 0;
-  right: 0;
+.mountains {
   width: 75em;
 }
 
-#background_clouds {
-  left: 20%;
-  right: 0;
-  width: 48em;
+.swirl {
+  width: 55em;
+}
+
+.happy {
+  width: 15em;
+}
+
+.clouds {
+  width: 45em;
+}
+
+.mountain {
+  width: 45em;
+}
+
+.fish {
+  width: 30em;
 }
 
 .gallery {
-  position: fixed;
-  left: 5%;
-  margin-top: auto;
-  margin-bottom: auto;
+  display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 8em;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0.0;
   color: white;
-  white-space: nowrap;
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
 }
 
 .gallery_block {
-  display: inline-block;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   width: 15%;
-  height: 70%;
+  height: 23em;
+  min-width: 15em;
   background-color: black;
-  margin: 3em;
+  margin: 2em;
+}
+
+.gallery_title {
+  position: absolute;
+  top: .7em;
+}
+
+.gallery_desc {
+  position: absolute;
+  top: 3em;
 }
 
 .gallery_image {
-  height: 60%;
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;

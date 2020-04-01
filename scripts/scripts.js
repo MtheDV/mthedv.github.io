@@ -5,12 +5,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-let backgroundParrCircleBlue = document.querySelector("#blue_circle");
-let backgroundParrTextHome = document.querySelector("#home_text");
-let backgroundParrMountains = document.querySelector("#background_mountains");
-let backgroundParrCircleOrange = document.querySelector("#orange_circle");
-let backgroundParrTextContact = document.querySelector("#contact_text");
-let backgroundParrClouds = document.querySelector("#background_clouds");
 /* pageTypes
  * 0 = home
  * 1 = contacts
@@ -18,8 +12,11 @@ let backgroundParrClouds = document.querySelector("#background_clouds");
  */
 let pageType = 0;
 
-function parallaxCalculate(distance, mouse, speed) {
-    return (((distance - mouse) / distance * 100) - 50) * speed;
+let parallaxElements = document.getElementsByClassName("parallax_element");
+
+function parallaxCalculate(height, width, mouseY, mouseX, speedX, speedY, xOffset, yOffset) {
+    return [((((height - mouseY) / height * 100) - 50) * speedY) + yOffset,
+            ((((width - mouseX) / width * 100) - 50) * speedX) + xOffset];
 }
 
 function parallax(e) {
@@ -28,52 +25,28 @@ function parallax(e) {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
 
-    let topCircle = parallaxCalculate(height, mouseY, 0.03);
-    let leftCircle = parallaxCalculate(width, mouseX, 0.04);
-
-    let topText = parallaxCalculate(height, mouseY, 0.055);
-    let leftText = parallaxCalculate(width, mouseX, 0.07);
-
-    let topMountain = parallaxCalculate(height, mouseY, 0.08);
-    let leftMountain = parallaxCalculate(width, mouseX, 0.1);
-
-    if (pageType == 0) {
-        backgroundParrCircleBlue.style.top = topCircle + "%";
-        backgroundParrCircleBlue.style.left = leftCircle + "%";
-        backgroundParrTextHome.style.top = topText + 37 + "%";
-        backgroundParrTextHome.style.left = leftText + "%";
-        backgroundParrMountains.style.top = topMountain + 50 + "%";
-        backgroundParrMountains.style.left = leftMountain + "%";
-    } else if (pageType == 1) {
-        backgroundParrCircleOrange.style.top = topCircle + "%";
-        backgroundParrCircleOrange.style.left = leftCircle + "%";
-        backgroundParrTextContact.style.top = topText + 25 + "%";
-        backgroundParrTextContact.style.left = leftText - 35 + "%";
-        backgroundParrClouds.style.top = topMountain + 30 + "%";
-        backgroundParrClouds.style.left = leftMountain + 15 + "%";
+    for (let i = 0; i < parallaxElements.length; i++) {
+        let idManipulates = parallaxElements[i].id;
+        idManipulates = idManipulates.split("_");
+        let parallaxCalc = parallaxCalculate(height, width, mouseY, mouseX,
+                                            Number(idManipulates[0]), Number(idManipulates[1]), 
+                                            Number(idManipulates[2]), Number(idManipulates[3]));
+        parallaxElements[i].style.left = parallaxCalc[1] + "%";
+        parallaxElements[i].style.top  = parallaxCalc[0] + "%";
+        parallaxElements[i].style.zIndex = i;
     }
+
+    /*
+            NEW IDEA
+            have method that calculates both top and left of the parallax movement: done
+            have a variable that hold all the elements that have the class parallax_element: done
+            loop through variable to get each elements id: done
+            using the id, which is specific, get speedX_speedY_xOffset_yOffset and parse: done
+            calculate new parallax of each element: done
+            apply using DOM: done
+    */
 }
 window.addEventListener("mousemove", parallax);
-
-let wholeGallery = document.querySelector(".gallery");
-let galleryX = 0;
-
-function moveGallery(e) {
-    let width = window.innerWidth;
-    let mouseX = e.clientX;
-
-    if (mouseX > width - 400)
-        galleryX -= 15;
-    else if (mouseX < 400)
-        galleryX += 15;
-
-    if (galleryX >= 5)
-        galleryX = 5;
-
-    wholeGallery.style.left = galleryX + "%";
-}
-window.addEventListener("mousedown", moveGallery);
-
 
 function animateOut(element) {
     element.style.opacity = "0.0";
@@ -81,43 +54,32 @@ function animateOut(element) {
         element.style.display = "none";
     }, 350);
 }
-function animateIn(element) {
+function animateIn(element, display) {
     element.style.opacity = "1.0";
-    element.style.display = "block";
+    element.style.display = display;
 }
 
-let parallaxBackgroundHome = document.querySelector(".parallax_background_home");
-let parallaxBackgroundContact = document.querySelector(".parallax_background_contact");
-let projects = document.querySelector(".gallery");
-
-let projectsButton = document.querySelector(".projects_button");
+let projectsButton = document.querySelector(".works_button");
 let logoButton = document.querySelector(".logo");
-let contactButton = document.querySelector(".contact_button");
-let mailButton = document.querySelector(".mail_button");
-let linkedinButton = document.querySelector(".linkedin_button");
-let instagramButton = document.querySelector(".instagram_button");
+let parallaxPage = document.querySelector(".parallax");
+let projectsPage = document.querySelector(".gallery");
 
 projectsButton.onclick = function() {
-    animateOut(parallaxBackgroundHome);
-    animateOut(parallaxBackgroundContact);
+    animateOut(parallaxPage);
 
-    animateIn(projects);
+    animateIn(projectsPage, "flex");
     pageType = 2;
 }
 logoButton.onclick = function() {
-    animateOut(projects);
-    animateOut(parallaxBackgroundContact);
+    animateOut(projectsPage);
 
-    animateIn(parallaxBackgroundHome);
+    animateIn(parallaxPage, "block");
     pageType = 0;
 }
-contactButton.onclick = function() {
-    animateOut(projects);
-    animateOut(parallaxBackgroundHome);
 
-    animateIn(parallaxBackgroundContact);
-    pageType = 1;
-}
+let mailButton = document.querySelector(".mail_button");
+let linkedinButton = document.querySelector(".linkedin_button");
+let instagramButton = document.querySelector(".instagram_button");
 
 mailButton.onclick = function() {
     window.open("mailto:mathewdevin03@gmail.com");
@@ -128,4 +90,3 @@ linkedinButton.onclick = function() {
 instagramButton.onclick = function() {
     window.open("https://www.instagram.com/mathew_dv/");
 }
-
