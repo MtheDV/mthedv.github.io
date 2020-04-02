@@ -39,6 +39,10 @@ function parallax(e) {
 }
 window.addEventListener("mousemove", parallax);
 
+function animateOutParallax() {
+    parallaxPage.style.opacity = "0.5";
+}
+
 function animateOut(element) {
     element.style.opacity = "0.0";
     setTimeout(function() {
@@ -46,21 +50,23 @@ function animateOut(element) {
     }, 350);
 }
 function animateIn(element, display) {
-    element.style.opacity = "1.0";
     element.style.display = display;
+    setTimeout(function() {
+        element.style.opacity = "1.0";
+    }, 20);
 }
 
 let projectsButton = document.querySelector(".works_button");
-let logoButton = document.querySelector(".logo");
+let exitButton = document.querySelector(".gallery_exit");
 let projectsPage = document.querySelector(".gallery");
 
 projectsButton.onclick = function() {
-    animateOut(parallaxPage);
+    animateOutParallax();
 
     animateIn(projectsPage, "flex");
     pageType = 2;
 }
-logoButton.onclick = function() {
+exitButton.onclick = function() {
     animateOut(projectsPage);
 
     animateIn(parallaxPage, "block");
