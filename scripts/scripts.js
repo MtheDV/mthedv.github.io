@@ -13,6 +13,7 @@
 let pageType = 0;
 
 let parallaxElements = document.getElementsByClassName("parallax_element");
+let parallaxPage = document.querySelector(".parallax");
 
 function parallaxCalculate(height, width, mouseY, mouseX, speedX, speedY, xOffset, yOffset) {
     return [((((height - mouseY) / height * 100) - 50) * speedY) + yOffset,
@@ -35,16 +36,6 @@ function parallax(e) {
         parallaxElements[i].style.top  = parallaxCalc[0] + "%";
         parallaxElements[i].style.zIndex = i;
     }
-
-    /*
-            NEW IDEA
-            have method that calculates both top and left of the parallax movement: done
-            have a variable that hold all the elements that have the class parallax_element: done
-            loop through variable to get each elements id: done
-            using the id, which is specific, get speedX_speedY_xOffset_yOffset and parse: done
-            calculate new parallax of each element: done
-            apply using DOM: done
-    */
 }
 window.addEventListener("mousemove", parallax);
 
@@ -61,7 +52,6 @@ function animateIn(element, display) {
 
 let projectsButton = document.querySelector(".works_button");
 let logoButton = document.querySelector(".logo");
-let parallaxPage = document.querySelector(".parallax");
 let projectsPage = document.querySelector(".gallery");
 
 projectsButton.onclick = function() {

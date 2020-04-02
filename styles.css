@@ -6,7 +6,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  font-size: calc(0.08em + 1vw);
 }
 
 body {
@@ -59,10 +59,19 @@ h1 {
   margin-left: 1em;
 }
 
+.background_blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .parallax {
   display: block;
   position: fixed;
   opacity: 1.0;
+  left: 0;
 }
 
 .background_circle {
@@ -160,7 +169,7 @@ h1 {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  top: 8em;
+  top: 5em;
   left: 0;
   width: 100%;
   height: 100%;
@@ -169,6 +178,7 @@ h1 {
 }
 
 .gallery_block {
+  position: relative;
   width: 15%;
   height: 23em;
   min-width: 15em;
@@ -177,17 +187,15 @@ h1 {
 }
 
 .gallery_title {
-  position: absolute;
-  top: .7em;
+  position: relative;
 }
 
 .gallery_desc {
-  position: absolute;
-  top: 3em;
+  position: relative;
 }
 
 .gallery_image {
-  height: 100%;
+  height: 60%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
