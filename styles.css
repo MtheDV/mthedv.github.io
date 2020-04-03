@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700&display=swap");
+.disable-scrollbars {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.disable-scrollbars::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 * {
   transition: all .3s;
   -webkit-transition: all .3s;
@@ -162,15 +172,10 @@ h1 {
 
 .gallery {
   display: none;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  top: 6em;
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 50%;
+  width: 100%;
   height: 100%;
   color: black;
   opacity: 0.0;
@@ -201,22 +206,22 @@ h1 {
   opacity: 0.5;
 }
 
-.gallery_image {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.gallery_image_full {
-  width: 25em;
-  height: 25em;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.gallery_details {
-  display: none;
+.gallery_view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 6em;
+  left: 0;
+  width: 50%;
+  height: calc(100% - 6em);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .gallery_block {
@@ -229,17 +234,38 @@ h1 {
   cursor: pointer;
 }
 
+.gallery_image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.gallery_more {
+  display: none;
+  position: absolute;
+  top: 6em;
+  left: 50%;
+  width: 50%;
+  height: calc(100% - 6em);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .gallery_details {
-  cursor: default;
+  display: none;
+}
+
+.gallery_image_full {
+  width: 90%;
+  height: auto;
 }
 
 .gallery_full {
-  position: fixed;
-  top: 8em;
-  left: 55%;
+  position: relative;
+  left: 5%;
   margin-left: 1em;
   margin-right: 1em;
-  overflow: scroll;
 }
 
 .gallery_white {

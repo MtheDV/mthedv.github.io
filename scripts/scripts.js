@@ -45,7 +45,7 @@ let projectsButton = document.querySelector(".works_button");
 let exitButton = document.querySelector(".gallery_exit");
 let projectsPage = document.querySelector(".gallery");
 
-let gallery = document.getElementsByClassName("gallery_block");
+let galleryMore = document.querySelector(".gallery_more");
 
 function animateOutParallax() {
     parallaxPage.style.opacity = "0.5";
@@ -76,10 +76,7 @@ exitButton.onclick = function() {
     animateIn(parallaxPage, "block");
     pageType = 0;
 
-    for (let i = 0; i < gallery.length; i++) {
-        let galleryDetails = gallery[i].children[1];
-        galleryDetails.style.display = "none";
-    }
+    galleryMore.style.display = "none";
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -102,17 +99,18 @@ instagramButton.onclick = function() {
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
+let galleryImages = document.getElementsByClassName("gallery_block");
+let galleryDetails = document.getElementsByClassName("gallery_details");
 
 window.addEventListener("click", function() {
     if (pageType == 1) {
-        for (let i = 0; i < gallery.length; i++) {
-            gallery[i].onclick = function() {
-                let galleryDetails = gallery[i].children[1];
-                galleryDetails.style.display = "block";
-                for (let j = 0; j < gallery.length; j++) {
+        for (let i = 0; i < galleryImages.length; i++) {
+            galleryImages[i].onclick = function() {
+                galleryDetails[i].style.display = "block";
+                galleryMore.style.display = "block";
+                for (let j = 0; j < galleryDetails.length; j++) {
                     if (j != i) {
-                        let galleryDetailsClose = gallery[j].children[1];
-                        galleryDetailsClose.style.display = "none";
+                        galleryDetails[j].style.display = "none";
                     }
                 }
             }
