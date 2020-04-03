@@ -84,8 +84,8 @@ h1 {
   height: 30em;
   border-radius: 50%;
   background-color: dodgerblue;
-  -webkit-transition-duration: 20ms;
-          transition-duration: 20ms;
+  -webkit-transition-duration: 1ms;
+          transition-duration: 1ms;
 }
 
 .background_text {
@@ -97,8 +97,8 @@ h1 {
   background-color: black;
   text-align: center;
   width: 15em;
-  -webkit-transition-duration: 20ms;
-          transition-duration: 20ms;
+  -webkit-transition-duration: 1ms;
+          transition-duration: 1ms;
 }
 
 .background_links {
@@ -110,8 +110,8 @@ h1 {
   background-color: black;
   text-align: left;
   width: 18em;
-  -webkit-transition-duration: 20ms;
-          transition-duration: 20ms;
+  -webkit-transition-duration: 1ms;
+          transition-duration: 1ms;
 }
 
 .background_works {
@@ -123,8 +123,8 @@ h1 {
   background-color: black;
   text-align: center;
   width: 13em;
-  -webkit-transition-duration: 20ms;
-          transition-duration: 20ms;
+  -webkit-transition-duration: 1ms;
+          transition-duration: 1ms;
 }
 
 .background_image {
@@ -132,8 +132,8 @@ h1 {
   left: 0;
   right: 0;
   margin: auto;
-  -webkit-transition-duration: 20ms;
-          transition-duration: 20ms;
+  -webkit-transition-duration: 1ms;
+          transition-duration: 1ms;
 }
 
 .mountains {
@@ -172,7 +172,7 @@ h1 {
   left: 0;
   width: 50%;
   height: 100%;
-  color: white;
+  color: black;
   opacity: 0.0;
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
@@ -191,9 +191,32 @@ h1 {
   position: fixed;
   top: 2em;
   left: 2em;
-  width: 2.5em;
+  width: 2em;
   height: auto;
   cursor: pointer;
+  opacity: 1.0;
+}
+
+.gallery_exit:hover {
+  opacity: 0.5;
+}
+
+.gallery_image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.gallery_image_full {
+  width: 25em;
+  height: 25em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.gallery_details {
+  display: none;
 }
 
 .gallery_block {
@@ -201,37 +224,42 @@ h1 {
   width: 15%;
   height: 23em;
   min-width: 15em;
-  background-color: black;
   margin: 2em;
+  background-color: white;
+  cursor: pointer;
 }
 
-.gallery_title {
-  position: relative;
+.gallery_details {
+  cursor: default;
 }
 
-.gallery_desc {
-  position: relative;
+.gallery_full {
+  position: fixed;
+  top: 8em;
+  left: 55%;
+  margin-left: 1em;
+  margin-right: 1em;
+  overflow: scroll;
 }
 
-.gallery_image {
-  height: 60%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.gallery_white {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: white;
 }
 
 h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  font-size: 1.5em;
-  margin-left: 1em;
+  font-size: 3em;
 }
 
 h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 1.2em;
-  margin-left: 1em;
-  margin-right: 1em;
+  font-size: 1.875em;
 }
 /*# sourceMappingURL=styles.css.map */

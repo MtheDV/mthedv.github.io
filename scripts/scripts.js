@@ -7,8 +7,7 @@
 
 /* pageTypes
  * 0 = home
- * 1 = contacts
- * 2 = projects
+ * 1 = projects
  */
 let pageType = 0;
 
@@ -39,6 +38,15 @@ function parallax(e) {
 }
 window.addEventListener("mousemove", parallax);
 
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+let projectsButton = document.querySelector(".works_button");
+let exitButton = document.querySelector(".gallery_exit");
+let projectsPage = document.querySelector(".gallery");
+
+let gallery = document.getElementsByClassName("gallery_block");
+
 function animateOutParallax() {
     parallaxPage.style.opacity = "0.5";
 }
@@ -56,22 +64,26 @@ function animateIn(element, display) {
     }, 20);
 }
 
-let projectsButton = document.querySelector(".works_button");
-let exitButton = document.querySelector(".gallery_exit");
-let projectsPage = document.querySelector(".gallery");
-
 projectsButton.onclick = function() {
     animateOutParallax();
 
     animateIn(projectsPage, "flex");
-    pageType = 2;
+    pageType = 1;
 }
 exitButton.onclick = function() {
     animateOut(projectsPage);
 
     animateIn(parallaxPage, "block");
     pageType = 0;
+
+    for (let i = 0; i < gallery.length; i++) {
+        let galleryDetails = gallery[i].children[1];
+        galleryDetails.style.display = "none";
+    }
 }
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 let mailButton = document.querySelector(".mail_button");
 let linkedinButton = document.querySelector(".linkedin_button");
@@ -86,3 +98,24 @@ linkedinButton.onclick = function() {
 instagramButton.onclick = function() {
     window.open("https://www.instagram.com/mathew_dv/");
 }
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+
+window.addEventListener("click", function() {
+    if (pageType == 1) {
+        for (let i = 0; i < gallery.length; i++) {
+            gallery[i].onclick = function() {
+                let galleryDetails = gallery[i].children[1];
+                galleryDetails.style.display = "block";
+                for (let j = 0; j < gallery.length; j++) {
+                    if (j != i) {
+                        let galleryDetailsClose = gallery[j].children[1];
+                        galleryDetailsClose.style.display = "none";
+                    }
+                }
+            }
+        }
+    }
+})
