@@ -40,16 +40,6 @@ header {
     z-index: 11;
 }
 
-.header_buttons {
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    top: 2.5em;
-
-    z-index: inherit;
-}
-
 a {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
@@ -200,6 +190,8 @@ h1 {
     &:hover {
         opacity: 0.5;
     }
+
+    z-index: 12;
 }
 
 .gallery_view {
@@ -280,3 +272,87 @@ h3 {
 }
 
 
+@media screen and (max-width: 450px) {
+    a {
+        font-size: 6em;
+    }
+
+    .logo {
+        top: 3em;
+        height: 10em;
+    }
+
+    .background_links {
+        top: 50em;
+        width: 40em;
+        color: black;
+        background-color: white;
+        text-align: center;
+        
+    }
+
+    .background_works {
+        top: 30em;
+        width: 25em;
+        color: black;
+        background-color: white;
+    }
+
+    .background_circle {
+        display: none;
+    }
+
+    .background_image {
+        display: none;
+    }
+
+    .background_text {
+        display: none;
+    }
+
+    .gallery_background {
+        width: 100%;
+    }
+
+    .gallery_exit {
+        top: 4em;
+        left: 4em;
+        width: 6em;
+    }
+
+    .gallery_view {
+        top: 15em;
+        width: 100%;
+    }
+
+    .gallery_block {
+        width: 30em;
+        min-width: 30em;
+        height: 50%;
+    }
+
+    .gallery_more {
+        top: 8em;
+        left: 0;
+        width: 100%;
+    }
+
+    .gallery_white {
+        width: 100%;
+        left: 0;
+    }
+
+    h2 {
+        font-size: 8em;
+    }
+
+    h3 {
+        font-size: 5em;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .gallery_block {
+        width: 100%;
+    }
+}

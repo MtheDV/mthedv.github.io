@@ -25,15 +25,17 @@ function parallax(e) {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
 
-    for (let i = 0; i < parallaxElements.length; i++) {
-        let idManipulates = parallaxElements[i].id;
-        idManipulates = idManipulates.split("_");
-        let parallaxCalc = parallaxCalculate(height, width, mouseY, mouseX,
-                                            Number(idManipulates[0]), Number(idManipulates[1]), 
-                                            Number(idManipulates[2]), Number(idManipulates[3]));
-        parallaxElements[i].style.left = parallaxCalc[1] + "%";
-        parallaxElements[i].style.top  = parallaxCalc[0] + "%";
-        parallaxElements[i].style.zIndex = i;
+    if (width >= 450) {
+        for (let i = 0; i < parallaxElements.length; i++) {
+            let idManipulates = parallaxElements[i].id;
+            idManipulates = idManipulates.split("_");
+            let parallaxCalc = parallaxCalculate(height, width, mouseY, mouseX,
+                                                Number(idManipulates[0]), Number(idManipulates[1]), 
+                                                Number(idManipulates[2]), Number(idManipulates[3]));
+            parallaxElements[i].style.left = parallaxCalc[1] + "%";
+            parallaxElements[i].style.top  = parallaxCalc[0] + "%";
+            parallaxElements[i].style.zIndex = i;
+        }
     }
 }
 window.addEventListener("mousemove", parallax);
