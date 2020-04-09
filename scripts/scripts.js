@@ -45,6 +45,7 @@ window.addEventListener("mousemove", parallax);
 
 let projectsButton = document.querySelector(".works_button");
 let exitButton = document.querySelector(".gallery_exit");
+let exitButtonMobile = document.querySelector(".gallery_exit_mobile");
 let projectsPage = document.querySelector(".gallery");
 
 let galleryMore = document.querySelector(".gallery_more");
@@ -80,6 +81,14 @@ exitButton.onclick = function() {
 
     galleryMore.style.display = "none";
 }
+exitButtonMobile.onclick = function() {
+    galleryMore.style.display = "none";
+    for (let i = 0; i < galleryDetails.length; i++) {
+        galleryDetails[i].style.display = "none";
+    }
+
+    exitButtonMobile.style.display = "none";
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -114,6 +123,9 @@ window.addEventListener("click", function() {
                     if (j != i) {
                         galleryDetails[j].style.display = "none";
                     }
+                }
+                if (window.innerWidth < 450) {  
+                    exitButtonMobile.style.display = "block";
                 }
             }
         }

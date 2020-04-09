@@ -269,6 +269,10 @@ h1 {
   background-color: white;
 }
 
+.gallery_exit_mobile {
+  display: none;
+}
+
 h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -318,6 +322,19 @@ h3 {
     top: 4em;
     left: 4em;
     width: 6em;
+  }
+  .gallery_exit_mobile {
+    position: fixed;
+    top: 4em;
+    left: 4em;
+    width: 6em;
+    -webkit-filter: invert(1);
+            filter: invert(1);
+    cursor: pointer;
+    opacity: 1.0;
+  }
+  .gallery_exit_mobile:hover {
+    opacity: 0.5;
   }
   .gallery_view {
     top: 15em;
