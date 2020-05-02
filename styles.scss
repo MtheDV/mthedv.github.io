@@ -174,7 +174,7 @@ h1 {
     position: fixed;
     top: 0;
     left: inherit;
-    width: 50%;
+    width: 100%;
     height: 100%;
     background-color: black;
 }
@@ -194,14 +194,27 @@ h1 {
     z-index: 12;
 }
 
+.gallery_exit_mobile {
+    position: fixed;
+    top: 2em;
+    left: 2em;
+    width: 2em;
+    filter: invert(1);
+    cursor: pointer;
+    opacity: 1.0;
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
 .gallery_view {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     position: absolute;
-    top: 6em;
+    top: 7em;
     left: 0;
-    width: 50%;
+    width: 100%;
     height: calc(100% - 6em);
     overflow-y: auto;
     overflow-x: hidden;
@@ -209,10 +222,8 @@ h1 {
 
 .gallery_block {
     position: relative;
-    width: 15%;
-    height: 23em;
-    min-width: 15em;
-    margin: 2em;
+    width: 17em;
+    height: 17em;
     background-color: white;
     cursor: pointer;
 }
@@ -226,9 +237,9 @@ h1 {
 .gallery_more {
     display: none;
     position: absolute;
-    top: 6em;
-    left: 50%;
-    width: 50%;
+    top: 7em;
+    left: 0;
+    width: 100%;
     height: calc(100% - 6em);
     overflow-y: auto;
     overflow-x: hidden;
@@ -253,14 +264,10 @@ h1 {
 .gallery_white {
     position: fixed;
     top: 0;
-    left: 50%;
-    width: 50%;
+    left: 0;
+    width: 100%;
     height: 100%;
     background-color: white;
-}
-
-.gallery_exit_mobile {
-    display: none;
 }
 
 h2 {
@@ -324,16 +331,9 @@ h3 {
         width: 6em;
     }
     .gallery_exit_mobile {
-        position: fixed;
         top: 4em;
         left: 4em;
         width: 6em;
-        filter: invert(1);
-        cursor: pointer;
-        opacity: 1.0;
-        &:hover {
-            opacity: 0.5;
-        }
     }
 
     .gallery_view {
@@ -344,7 +344,7 @@ h3 {
     .gallery_block {
         width: 30em;
         min-width: 30em;
-        height: 50%;
+        height: 100%;
     }
 
     .gallery_more {
@@ -364,11 +364,5 @@ h3 {
 
     h3 {
         font-size: 5em;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    .gallery_block {
-        width: 100%;
     }
 }

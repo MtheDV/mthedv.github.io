@@ -124,9 +124,7 @@ window.addEventListener("click", function() {
                         galleryDetails[j].style.display = "none";
                     }
                 }
-                if (window.innerWidth < 450) {  
-                    exitButtonMobile.style.display = "block";
-                }
+                exitButtonMobile.style.display = "block";
             }
         }
     }
