@@ -3,6 +3,22 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: black;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+  height: auto;
+}
+
+.test_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 32%;
+  height: auto;
 }
 /*# sourceMappingURL=storm_styles.css.map */

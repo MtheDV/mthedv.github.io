@@ -117,14 +117,18 @@ window.addEventListener("click", function() {
     if (pageType == 1) {
         for (let i = 0; i < galleryImages.length; i++) {
             galleryImages[i].onclick = function() {
-                galleryDetails[i].style.display = "block";
-                galleryMore.style.display = "block";
-                for (let j = 0; j < galleryDetails.length; j++) {
-                    if (j != i) {
-                        galleryDetails[j].style.display = "none";
+                if (galleryImages[i].classList.contains("link"))
+                    window.location = galleryImages[i].id;
+                else {
+                    galleryDetails[i].style.display = "block";
+                    galleryMore.style.display = "block";
+                    for (let j = 0; j < galleryDetails.length; j++) {
+                        if (j != i) {
+                            galleryDetails[j].style.display = "none";
+                        }
                     }
+                    exitButtonMobile.style.display = "block";
                 }
-                exitButtonMobile.style.display = "block";
             }
         }
     }
