@@ -216,11 +216,19 @@ h2 {
   padding: .5rem;
   margin-bottom: 2rem;
   border: 4px solid black; }
-.contact a {
+.contact button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   font-size: 2rem;
   float: right;
+  border: none;
   margin-right: 0;
-  margin-bottom: 2.5rem; }
+  margin-bottom: 2.5rem;
+  background-color: black;
+  color: white;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem; }
+  .contact button:hover {
+    color: dodgerblue; }
 
 @media screen and (max-width: 450px) {
   a {
