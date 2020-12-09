@@ -2,9 +2,9 @@
  * created by mathew de vin
  */
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
 
+////////////// Parallax ///////////////
+///////////////////////////////////////
 /* pageTypes
  * 0 = home
  * 1 = projects
@@ -39,11 +39,76 @@ function parallax(e) {
     }
 }
 window.addEventListener("mousemove", parallax);
+////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
+// SCROLL TO CHANGE PARALLAX OPACITY //
+///////////////////////////////////////
+window.addEventListener("scroll", () => {
+    var scrollY = window.scrollY;
+    var winHeight = window.innerHeight;
+    if (scrollY > winHeight/2)
+        parallaxPage.style.opacity = "0.0";
+    else
+        parallaxPage.style.opacity = "1.0";
+});
+///////////////////////////////////////
 
-let projectsButton = document.querySelector(".works_button");
+
+////////// HEADER BUTTONS /////////////
+///////////////////////////////////////
+let contactButton = document.querySelector(".button_contact");
+let linkedinButton = document.querySelector(".button_linkedin");
+let instagramButton = document.querySelector(".button_instagram");
+let projectsButton = document.querySelector(".button_projects");
+let githubButton = document.querySelector(".button_github")
+let logo = document.querySelector(".logo");
+
+let projects = document.querySelector(".projects");
+let contact = document.querySelector(".contact");
+
+contactButton.onclick = function() {
+    window.scroll({
+        top: contact.getBoundingClientRect().top,
+        left: 0,
+        behavior: 'smooth'
+    });
+}
+linkedinButton.onclick = function() {
+    window.open("https://www.linkedin.com/in/mathew-de-vin-705a8a198/");
+}
+instagramButton.onclick = function() {
+    window.open("https://www.instagram.com/mathew_dv/");
+}
+projectsButton.onclick = () => {
+    window.scroll({
+        top: projects.getBoundingClientRect().top,
+        left: 0,
+        behavior: 'smooth'
+    });
+}
+githubButton.onclick = () => {
+    window.open("https://github.com/MtheDV");
+}
+logo.onclick = () => {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+}
+///////////////////////////////////////
+
+
+///////// REMOVE FORM DATA ////////////
+///////////////////////////////////////
+if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+}
+///////////////////////////////////////
+
+////// DEPRECATED GALLERY CODE ////////
+///////////////////////////////////////
+/*let projectsButton = document.querySelector(".button_projects");
 let exitButton = document.querySelector(".gallery_exit");
 let exitButtonMobile = document.querySelector(".gallery_exit_mobile");
 let projectsPage = document.querySelector(".gallery");
@@ -90,26 +155,6 @@ exitButtonMobile.onclick = function() {
     exitButtonMobile.style.display = "none";
 }
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-
-let mailButton = document.querySelector(".mail_button");
-let linkedinButton = document.querySelector(".linkedin_button");
-let instagramButton = document.querySelector(".instagram_button");
-
-mailButton.onclick = function() {
-    window.open("mailto:mathewdevin03@gmail.com");
-}
-linkedinButton.onclick = function() {
-    window.open("https://www.linkedin.com/in/mathew-de-vin-705a8a198/");
-}
-instagramButton.onclick = function() {
-    window.open("https://www.instagram.com/mathew_dv/");
-}
-
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-
 let galleryImages = document.getElementsByClassName("gallery_block");
 let galleryDetails = document.getElementsByClassName("gallery_details");
 
@@ -132,4 +177,5 @@ window.addEventListener("click", function() {
             }
         }
     }
-})
+});*/
+///////////////////////////////////////

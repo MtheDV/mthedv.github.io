@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
@@ -11,6 +11,12 @@
         
         <header>
             <img class="logo" src="assets/images/mdv.outline.svg" alt="Mathew de Vin's logo">
+            <div class="headerButtons">
+                <a class="button_projects">projects</a>
+                <a class="button_contact">contact me</a>
+                <a class="button_linkedin">linked in</a>
+                <a class="button_instagram">instagram</a>
+            </div>
         </header>
 
         <div class="parallax">
@@ -33,6 +39,7 @@
                 </picture>
 
                 <h1 class="background_text parallax_element" id="0.055_0.07_0_37">Hey I'm Mathew de Vin; student, programmer, artist</h1>
+
                 <picture>
                     <source media="(min-width: 450px)" srcset="assets/images/happy.png?nf_resize=fit&w=250">
                     <img class="background_image happy parallax_element" id="0.06_0.07_-70_0" src="assets/images/happy.png?nf_resize=fit&w=1" alt="grey smiles repeated downwards">
@@ -46,120 +53,56 @@
                     <img class="background_image mountains parallax_element" id="0.08_0.1_0_50" src="assets/images/mountains.png?nf_resize=fit&w=1" alt="greyscale clip of mountains">
                 </picture>
 
-                <img class="background_blank parallax_element" id="0_0_0_0" src="assets/images/blank.png" alt="transparent filter">
-
-                <div class="background_links parallax_element" id="0.1_0.11_-38_60">
-                    <a class="mail_button">mail</a>
-                    <a class="linkedin_button">linkedin</a>
-                    <a class="instagram_button">instagram</a>
-                </div>
-                <div class="background_works parallax_element" id="0.1_0.11_38_60">
-                    <a class="works_button">works</a>
-                </div>
             </div>
         </div>
 
-        <div class="gallery">
-            <div class="gallery_background">
-                <img class="gallery_exit" src="assets/images/x_button.svg" alt="exit button">
-            </div>
-            <!-------------------->
-            <div class="gallery_view disable-scrollbars">
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/spacePortal.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div>
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/mountainfish.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/rideaway.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/downdowndown.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/fish.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/stackable.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block link" id="./storm.html">
-                    <img class="gallery_image" src="assets/images/random/upupup.jpg?nf_resize=fit&w=500" alt="the word up distored in orange colour">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/stackable.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/stackable.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/stackable.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/stackable.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/stackable.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/stackable.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/stackable.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-                <div class="gallery_block">
-                    <img class="gallery_image" src="assets/images/random/stackable.jpg?nf_resize=fit&w=500" alt="space man exiting a portal to another planet">
-                </div> 
-            </div>
-            <!-------------------->
-            <div class="gallery_more disable-scrollbars">
-                <div class="gallery_white">
-                    <img class="gallery_exit_mobile" src="assets/images/x_button.svg" alt="exit button">
-                </div>
-                <div class="gallery_details">
-                    <div class="gallery_full">
-                        <h2 class="gallery_title">project</h2>
-                        <h3 class="gallery_desc">this is a project</h3>
-                        <img class="gallery_image_full" src="assets/images/random/spacePortal.jpg?nf_resize=fit&w=1000" alt="space man exiting a portal to another planet">
+        <div class="container">
+            <div class="projects">
+                <div class="project">
+                    <div class="project_text order1">
+                        <h3>Project Title</h3>
+                        <p>Project description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dapibus metus, at interdum risus. Nunc malesuada tellus ac est rhoncus aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
+                    <picture class="order2">
+                        <source media="(min-width: 200px)" srcset="assets/images/random/fish.jpg?nf_resize=smartcrop&w=300&h=180">
+                        <img class="project_image" src="assets/images/mountains.png?nf_resize=fit&w=1" alt="project image">
+                    </picture>
                 </div>
-                <div class="gallery_details">
-                    <div class="gallery_full">
-                        <h2 class="gallery_title">project</h2>
-                        <h3 class="gallery_desc">this is a project</h3>
-                        <img class="gallery_image_full" src="assets/images/random/mountainfish.jpg?nf_resize=fit&w=1000" alt="space man exiting a portal to another planet">
+                <div class="project">
+                    <div class="project_text order2">
+                        <h3>Project Title</h3>
+                        <p>Project description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dapibus metus, at interdum risus. Nunc malesuada tellus ac est rhoncus aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
+                    <picture class="order1">
+                        <source media="(min-width: 200px)" srcset="assets/images/random/fish.jpg?nf_resize=smartcrop&w=300&h=180">
+                        <img class="project_image" src="assets/images/mountains.png?nf_resize=fit&w=1" alt="project image">
+                    </picture>
                 </div>
-                <div class="gallery_details">
-                    <div class="gallery_full">
-                        <h2 class="gallery_title">project</h2>
-                        <h3 class="gallery_desc">this is a project</h3>
-                        <img class="gallery_image_full" src="assets/images/random/rideaway.jpg?nf_resize=fit&w=1000" alt="space man exiting a portal to another planet">
+                <div class="project">
+                    <div class="project_text order1">
+                        <h3>Project Title</h3>
+                        <p>Project description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dapibus metus, at interdum risus. Nunc malesuada tellus ac est rhoncus aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                </div>
-                <div class="gallery_details">
-                    <div class="gallery_full">
-                        <h2 class="gallery_title">project</h2>
-                        <h3 class="gallery_desc">this is a project</h3>
-                        <img class="gallery_image_full" src="assets/images/random/downdowndown.jpg?nf_resize=fit&w=1000" alt="space man exiting a portal to another planet">
-                    </div>
-                </div>
-                <div class="gallery_details">
-                    <div class="gallery_full">
-                        <h2 class="gallery_title">project</h2>
-                        <h3 class="gallery_desc">this is a project</h3>
-                        <img class="gallery_image_full" src="assets/images/random/fish.jpg?nf_resize=fit&w=1000" alt="space man exiting a portal to another planet">
-                    </div>
-                </div>
-                <div class="gallery_details">
-                    <div class="gallery_full">
-                        <h2 class="gallery_title">project</h2>
-                        <h3 class="gallery_desc">this is a project</h3>
-                        <img class="gallery_image_full" src="assets/images/random/stackable.jpg?nf_resize=fit&w=1000" alt="space man exiting a portal to another planet">
-                    </div>
+                    <picture class="order2">
+                        <source media="(min-width: 200px)" srcset="assets/images/random/fish.jpg?nf_resize=smartcrop&w=300&h=180">
+                        <img class="project_image" src="assets/images/mountains.png?nf_resize=fit&w=1" alt="project image">
+                    </picture>
                 </div>
             </div>
-            <!-------------------->
+
+            <h2 class="github">see more on my <a class="button_github">github</a></h2>
+
+            <h1 class="contact_title">contact me</h1>
+
+            <form class="contact" name="contact" method="post" data-netlify="true">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="name" required><br>
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="email address" required><br>
+                <label for="message"></label>
+                <textarea name="message" id="message" placeholder="message" required></textarea><br>
+                <a onclick="window.location.href = 'https://mathewdevin.com'" type="submit">send</a>
+            </form>
         </div>
 
         <script src="scripts/scripts.js" async></script>
