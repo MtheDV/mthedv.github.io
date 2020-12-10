@@ -13,6 +13,7 @@ let pageType = 0;
 
 let parallaxElements = document.getElementsByClassName("parallax_element");
 let parallaxPage = document.querySelector(".parallax");
+let originalWidth = window.innerWidth;
 
 function parallaxCalculate(height, width, mouseY, mouseX, speedX, speedY, xOffset, yOffset) {
     return [((((height - mouseY) / height * 100) - 50) * speedY) + yOffset,
@@ -32,8 +33,7 @@ function parallax(e) {
             let parallaxCalc = parallaxCalculate(height, width, mouseY, mouseX,
                                                 Number(idManipulates[0]), Number(idManipulates[1]), 
                                                 Number(idManipulates[2]), Number(idManipulates[3]));
-            parallaxElements[i].style.left = parallaxCalc[1] + "%";
-            parallaxElements[i].style.top  = parallaxCalc[0] + "%";
+            parallaxElements[i].style.transform = "translate("+ (parallaxCalc[1]) + "vw," + (parallaxCalc[0]) + "vh)";
             parallaxElements[i].style.zIndex = i;
         }
     }
@@ -67,11 +67,7 @@ let projects = document.querySelector(".projects");
 let contact = document.querySelector(".contact");
 
 contactButton.onclick = function() {
-    window.scroll({
-        top: contact.getBoundingClientRect().top,
-        left: 0,
-        behavior: 'smooth'
-    });
+    contact.scrollIntoView({behavior:"smooth"});
 }
 linkedinButton.onclick = function() {
     window.open("https://www.linkedin.com/in/mathew-de-vin-705a8a198/");
@@ -80,11 +76,7 @@ instagramButton.onclick = function() {
     window.open("https://www.instagram.com/mathew_dv/");
 }
 projectsButton.onclick = () => {
-    window.scroll({
-        top: projects.getBoundingClientRect().top,
-        left: 0,
-        behavior: 'smooth'
-    });
+    projects.scrollIntoView({behavior:"smooth"});
 }
 githubButton.onclick = () => {
     window.open("https://github.com/MtheDV");
