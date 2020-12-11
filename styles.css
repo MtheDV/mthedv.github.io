@@ -11,7 +11,7 @@
   -moz-transition: all .3s; }
 
 html {
-  font-size: 0.8rem; }
+  font-size: 0.8vw; }
 
 body {
   background-color: white; }
@@ -154,12 +154,13 @@ h2 {
 
 .project_text {
   font-size: 1.75rem;
-  max-width: 40%;
+  max-width: 50%;
   margin-left: 2rem;
-  margin-right: 2rem; }
+  margin-right: 2rem;
+  text-align: justify; }
 
 .project_image {
-  width: 100%;
+  width: 50rem;
   height: auto;
   margin-top: 2rem; }
 
