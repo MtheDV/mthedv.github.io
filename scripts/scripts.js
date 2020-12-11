@@ -41,21 +41,24 @@ function parallax(e) {
 window.addEventListener("mousemove", parallax);
 ////////////////////////////////////////
 
-// SCROLL TO CHANGE PARALLAX OPACITY //
-///////////////////////////////////////
-window.addEventListener("scroll", () => {
-    var scrollY = window.scrollY;
-    var winHeight = window.innerHeight;
-    if (scrollY > winHeight/2)
-        parallaxPage.style.opacity = "0.0";
-    else
-        parallaxPage.style.opacity = "1.0";
-});
-///////////////////////////////////////
-
 
 ////////// HEADER BUTTONS /////////////
 ///////////////////////////////////////
+let body = document.querySelector("body");
+let hamburgerButton = document.querySelector(".hamburger");
+let exitButton = document.querySelector(".exit_overlay");
+let backToTopButton = document.querySelector(".return_top")
+let headerButtons = document.querySelector(".header_buttons");
+
+hamburgerButton.onclick = () => {
+    headerButtons.style.display = "block";
+    body.style.overflow = "hidden";
+}
+exitButton.onclick = () => {
+    headerButtons.style.display = "none";
+    body.style.overflow = "scroll";
+}
+
 let contactButton = document.querySelector(".button_contact");
 let linkedinButton = document.querySelector(".button_linkedin");
 let instagramButton = document.querySelector(".button_instagram");
@@ -68,6 +71,7 @@ let contact = document.querySelector(".contact");
 
 contactButton.onclick = function() {
     contact.scrollIntoView({behavior:"smooth"});
+    headerButtons.style.display = "none";
 }
 linkedinButton.onclick = function() {
     window.open("https://www.linkedin.com/in/mathew-de-vin-705a8a198/");
@@ -77,17 +81,50 @@ instagramButton.onclick = function() {
 }
 projectsButton.onclick = () => {
     projects.scrollIntoView({behavior:"smooth"});
+    headerButtons.style.display = "none";
 }
 githubButton.onclick = () => {
     window.open("https://github.com/MtheDV");
 }
+const scrollTop = function() {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+};
 logo.onclick = () => {
     window.scroll({
         top: 0,
         left: 0,
         behavior: 'smooth'
     });
-}
+};
+backToTopButton.onclick = () => {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+};
+///////////////////////////////////////
+
+
+// SCROLL TO CHANGE PARALLAX OPACITY //
+///////////////////////////////////////
+window.addEventListener("scroll", () => {
+    var scrollY = window.scrollY;
+    var winHeight = window.innerHeight;
+    if (scrollY > winHeight/2)
+        parallaxPage.style.opacity = "0.0";
+    else
+        parallaxPage.style.opacity = "1.0";
+
+    if (scrollY > winHeight/2)
+        backToTopButton.style.opacity = "1.0";
+    else
+        backToTopButton.style.opacity = "0.0";
+});
 ///////////////////////////////////////
 
 

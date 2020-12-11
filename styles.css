@@ -28,7 +28,7 @@ header {
   width: auto;
   z-index: inherit; }
 
-.headerButtons {
+.header_buttons {
   font-size: 1.75rem;
   position: fixed;
   z-index: inherit; }
@@ -53,6 +53,15 @@ header {
   bottom: 2.5rem;
   left: 13rem; }
 
+.exit_overlay {
+  display: none; }
+
+.hamburger {
+  display: none; }
+
+.return_top {
+  display: none; }
+
 a {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -75,6 +84,9 @@ h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 1.3rem; }
+
+.parallax_mobile {
+  display: none; }
 
 .parallax {
   display: block;
@@ -208,69 +220,115 @@ h2 {
     color: dodgerblue; }
 
 @media screen and (max-width: 450px) {
-  a {
-    font-size: 6em; }
-
-  .logo {
-    top: 3em;
-    height: 10em; }
-
-  .background_links {
-    top: 50em;
-    width: 40em;
-    color: black;
-    background-color: white;
+  html {
+    font-size: 3.75vw;
     text-align: center; }
 
-  .background_works {
-    top: 30em;
-    width: 25em;
-    color: black;
-    background-color: white; }
+  a {
+    margin-right: 0;
+    margin-left: 0; }
 
-  .background_circle {
-    display: none; }
+  .logo {
+    height: 3rem;
+    width: auto;
+    z-index: 11; }
 
-  .background_image {
-    display: none; }
+  .header_buttons {
+    display: none;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    width: 100vw;
+    height: 100vh; }
+    .header_buttons a {
+      background-color: white;
+      color: black; }
 
-  .background_text {
-    display: none; }
-
-  .gallery_background {
-    width: 100%; }
-
-  .gallery_exit {
-    top: 4em;
-    left: 4em;
-    width: 6em; }
-
-  .gallery_exit_mobile {
-    top: 4em;
-    left: 4em;
-    width: 6em; }
-
-  .gallery_view {
-    top: 15em;
-    width: 100%; }
-
-  .gallery_block {
-    width: 100%;
-    height: 100%; }
-
-  .gallery_more {
-    top: 8em;
+  .button_projects {
+    position: inherit;
+    top: 25%;
     left: 0;
+    right: 0;
+    margin: auto; }
+
+  .button_contact {
+    position: inherit;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto; }
+
+  .button_linkedin {
+    position: inherit;
+    top: 55%;
+    left: 0;
+    right: 0;
+    margin: auto; }
+
+  .button_instagram {
+    position: inherit;
+    top: 70%;
+    left: 0;
+    right: 0;
+    margin: auto; }
+
+  .exit_overlay {
+    display: block;
+    position: inherit;
+    top: 2.5rem;
+    right: 2.8rem; }
+
+  .buttons_mobile {
+    z-index: inherit; }
+    .buttons_mobile .hamburger {
+      display: block;
+      position: fixed;
+      top: 2.5rem;
+      right: 2.5rem;
+      z-index: inherit; }
+    .buttons_mobile .return_top {
+      display: block;
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      opacity: 0;
+      z-index: inherit; }
+
+  .parallax_mobile {
+    display: block;
+    position: absolute;
+    top: 20%;
+    text-align: left; }
+
+  .parallax {
+    display: none; }
+
+  .project {
+    flex-wrap: wrap; }
+
+  .project_text {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+
+  .project_image {
     width: 100%; }
 
-  .gallery_white {
+  .github {
+    float: none; }
+
+  .contact input {
+    width: 93%; }
+  .contact textarea {
+    width: 93%; }
+  .contact button {
     width: 100%;
-    left: 0; }
+    float: none; }
 
-  h2 {
-    font-size: 8em; }
+  .order1 {
+    order: 0; }
 
-  h3 {
-    font-size: 5em; } }
+  .order2 {
+    order: 0; } }
 
 /*# sourceMappingURL=styles.css.map */
