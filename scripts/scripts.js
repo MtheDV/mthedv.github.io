@@ -63,8 +63,7 @@ hamburgerButton.onclick = () => {
     body.style.overflow = "hidden";
 }
 exitButton.onclick = () => {
-    headerButtons.style.display = "none";
-    body.style.overflow = "scroll";
+    hideHeader();
 }
 
 let contactButton = document.querySelector(".button_contact");
@@ -80,28 +79,26 @@ let contact = document.querySelector(".contact");
 const openLink = function(link) {
     window.open(link);
 }
-
-linkedinButton.onclick = () => {
-    openLink("https://www.linkedin.com/in/mathew-de-vin-705a8a198/");
+const hideHeader = function() {
+    if (window.innerWidth <= 450) {
+        headerButtons.style.display = "none";
+        body.style.overflow = "scroll";
+    }
 }
 
-instagramButton.onclick = () => {
-    openLink("https://www.instagram.com/mathew_dv/");
-}
+linkedinButton.onclick = () => openLink("https://www.linkedin.com/in/mathew-de-vin-705a8a198/");
 
-githubButton.onclick = () => {
-    openLink("https://github.com/MtheDV");
-}
+instagramButton.onclick = () => openLink("https://www.instagram.com/mathew_dv/");
 
-contactButton.onclick = function() {
+githubButton.onclick = () => openLink("https://github.com/MtheDV");
+
+contactButton.onclick = () => {
     contact.scrollIntoView({behavior:"smooth"});
-    headerButtons.style.display = "none";
-    body.style.overflow = "scroll";
+    hideHeader();
 }
 projectsButton.onclick = () => {
     projects.scrollIntoView({behavior:"smooth"});
-    headerButtons.style.display = "none";
-    body.style.overflow = "scroll";
+    hideHeader();
 }
 logo.onclick = () => {
     window.scroll({
