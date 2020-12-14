@@ -255,6 +255,8 @@ p {
   @include animation-name(bounce);
   @include animation-duration(3s);
   @include animation-iteration-count(infinite);
+
+  z-index: 12;
 }
 // PARALLAX
 

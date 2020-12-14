@@ -26,6 +26,13 @@ function parallax(e) {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
 
+    if (mouseX == null && mouseY == null) {
+        mouseX = width/2;
+        mouseY = height/2;
+    }
+
+    console.log(mouseX);
+
     if (width >= 450) {
         for (let i = 0; i < parallaxElements.length; i++) {
             let idManipulates = parallaxElements[i].id;
@@ -39,6 +46,7 @@ function parallax(e) {
     }
 }
 window.addEventListener("mousemove", parallax);
+window.dispatchEvent(new Event("mousemove"));
 ////////////////////////////////////////
 
 
