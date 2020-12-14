@@ -69,30 +69,32 @@ let logo = document.querySelector(".logo");
 let projects = document.querySelector(".projects");
 let contact = document.querySelector(".contact");
 
+const openLink = function(link) {
+    window.open(link);
+}
+
+linkedinButton.onclick = () => {
+    openLink("https://www.linkedin.com/in/mathew-de-vin-705a8a198/");
+}
+
+instagramButton.onclick = () => {
+    openLink("https://www.instagram.com/mathew_dv/");
+}
+
+githubButton.onclick = () => {
+    openLink("https://github.com/MtheDV");
+}
+
 contactButton.onclick = function() {
     contact.scrollIntoView({behavior:"smooth"});
     headerButtons.style.display = "none";
-}
-linkedinButton.onclick = function() {
-    window.open("https://www.linkedin.com/in/mathew-de-vin-705a8a198/");
-}
-instagramButton.onclick = function() {
-    window.open("https://www.instagram.com/mathew_dv/");
+    body.style.overflow = "scroll";
 }
 projectsButton.onclick = () => {
     projects.scrollIntoView({behavior:"smooth"});
     headerButtons.style.display = "none";
+    body.style.overflow = "scroll";
 }
-githubButton.onclick = () => {
-    window.open("https://github.com/MtheDV");
-}
-const scrollTop = function() {
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
-};
 logo.onclick = () => {
     window.scroll({
         top: 0,
@@ -107,6 +109,20 @@ backToTopButton.onclick = () => {
         behavior: 'smooth'
     });
 };
+
+let exodusGit = document.querySelector(".exodus_git");
+let exodusPlay = document.querySelector(".exodus_play");
+let nececcGit = document.querySelector(".nececc_git");
+
+exodusGit.onclick = () => {
+    openLink("https://github.com/MtheDV/Exodus");
+}
+exodusPlay.onclick = () => {
+    openLink("https://play.google.com/store/apps/details?id=com.platypi.exodus");
+}
+nececcGit.onclick = () => {
+    openLink("https://github.com/MtheDV/ubco-cosc304-project")
+}
 ///////////////////////////////////////
 
 

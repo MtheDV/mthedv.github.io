@@ -6,11 +6,13 @@
     background: transparent; }
 
 * {
-  transition: all .3s;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s; }
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
 
 html {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   font-size: 0.8vw; }
 
 body {
@@ -75,15 +77,20 @@ a {
     color: dodgerblue; }
 
 h1 {
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  font-size: 3rem;
-  margin-left: 1.5rem; }
+  font-size: 3rem; }
 
 h2 {
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 1.3rem; }
+
+h3 {
+  font-weight: 700;
+  font-size: 1.75rem; }
+
+p {
+  font-size: 1.75rem;
+  text-align: justify; }
 
 .parallax_mobile {
   display: none; }
@@ -93,8 +100,7 @@ h2 {
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  opacity: 1.0; }
+  right: 0; }
 
 .background_text {
   position: fixed;
@@ -108,8 +114,16 @@ h2 {
   text-align: center;
   width: 49rem;
   height: 9rem;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
   transform-origin: center center;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
   transform: translate(0, 0);
+  -webkit-transition-duration: 1ms;
+  -o-transition-duration: 1ms;
   transition-duration: 1ms; }
 
 .background_image {
@@ -119,8 +133,16 @@ h2 {
   top: 0;
   bottom: 0;
   margin: auto;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
   transform-origin: center center;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
   transform: translate(0, 0);
+  -webkit-transition-duration: 1ms;
+  -o-transition-duration: 1ms;
   transition-duration: 1ms; }
 
 .slice1 {
@@ -144,80 +166,129 @@ h2 {
 .slice7 {
   width: 30%; }
 
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
+    transform: translateY(-1rem); }
+  50% {
+    -webkit-transform: translateY(1rem);
+    -ms-transform: translateY(1rem);
+    -o-transform: translateY(1rem);
+    transform: translateY(1rem); }
+  100% {
+    -webkit-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
+    transform: translateY(-1rem); } }
+.scroll_arrow {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5rem;
+  bottom: 7rem;
+  -webkit-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  -o-transform-origin: center bottom;
+  transform-origin: center bottom;
+  -webkit-animation-name: bounce;
+  -o-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
 .container {
+  display: grid;
+  grid-template-columns: [page-start] 10vw [content-start] 80vw [content-end] 10vw [page-end];
+  grid-template-rows: [skills] auto [logo_display] auto [proj] auto [github] auto [contact] auto [page-end];
+  gap: 6rem 0;
+  justify-items: center;
   position: absolute;
   top: 115%;
-  left: 10%;
-  right: 10%;
-  width: 80%; }
+  left: 0;
+  right: 0;
+  overflow-x: hidden; }
+
+.skills {
+  grid-column: content-start / content-end;
+  grid-row: skills / logo_display; }
+
+.logo_display {
+  grid-column: page-start / page-end;
+  grid-row: logo_display / proj;
+  display: flex;
+  flex-wrap: nowrap; }
+  .logo_display img {
+    height: 11rem;
+    margin: 2rem; }
 
 .projects {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
-  display: flex;
-  flex-wrap: wrap; }
+  grid-column: content-start / content-end;
+  grid-row: proj / github; }
 
 .project {
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 100%;
-  margin-top: 4rem; }
-
-.project_text {
-  font-size: 1.75rem;
-  max-width: 50%;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  text-align: justify; }
-
-.project_image {
-  width: 50rem;
-  height: auto;
-  margin-top: 2rem; }
+  justify-content: space-between; }
+  .project a {
+    font-size: 1.5rem; }
+  .project img {
+    width: 50rem;
+    height: auto;
+    margin-top: 2rem; }
 
 .order1 {
-  order: 1; }
+  order: 1;
+  margin-right: 2rem; }
 
 .order2 {
-  order: 2; }
+  order: 2;
+  margin-left: 2rem; }
 
 .github {
-  float: right;
-  margin-top: 2rem; }
+  grid-column: content-start / content-end;
+  grid-row: github / contact;
+  justify-self: end; }
 
-.contact_title {
-  margin: 10rem 0 2rem; }
-
-.contact input {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.25rem;
-  width: 50%;
-  height: 2rem;
-  padding: .25rem .5rem .25rem;
-  margin-bottom: 2rem;
-  border: 4px solid black; }
-.contact textarea {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.25rem;
-  width: 98%;
-  height: 20rem;
-  padding: .5rem;
-  margin-bottom: 2rem;
-  border: 4px solid black; }
-.contact button {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  float: right;
-  border: none;
-  margin-right: 0;
-  margin-bottom: 2.5rem;
-  background-color: black;
-  color: white;
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem; }
-  .contact button:hover {
-    color: dodgerblue; }
+.contact {
+  grid-column: content-start / content-end;
+  grid-row: contact / page-end;
+  width: 100%; }
+  .contact input {
+    font-size: 1.25rem;
+    width: 50%;
+    height: 3.5rem;
+    padding: .25rem .5rem .25rem;
+    margin-bottom: 2rem;
+    border: 0.35rem solid black;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  .contact textarea {
+    font-size: 1.25rem;
+    width: 100%;
+    height: 24rem;
+    padding: .5rem;
+    margin-bottom: 2rem;
+    border: 0.35rem solid black;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  .contact button {
+    font-weight: 700;
+    font-size: 2rem;
+    float: right;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    margin-bottom: 2.5rem; }
+    .contact button:hover {
+      color: dodgerblue; }
 
 @media screen and (max-width: 450px) {
   html {
@@ -238,6 +309,8 @@ h2 {
     position: fixed;
     background-color: white;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100vw;
     height: 100vh; }
     .header_buttons a {
@@ -298,37 +371,58 @@ h2 {
     display: block;
     position: absolute;
     top: 20%;
+    left: 3vw;
+    right: 0;
+    height: 150%;
+    overflow-x: hidden;
     text-align: left; }
+    .parallax_mobile img {
+      position: inherit;
+      top: 1rem;
+      right: -12.2rem;
+      width: 22rem;
+      -webkit-transform: rotate(-12deg);
+      -ms-transform: rotate(-12deg);
+      -o-transform: rotate(-12deg);
+      transform: rotate(-12deg); }
 
   .parallax {
     display: none; }
 
+  .container {
+    grid-template-columns: [page-start] 3vw [content-start] 94vw [content-end] 3vw [page-end]; }
+
+  .logo_display {
+    margin-left: 43rem; }
+    .logo_display img {
+      margin: 0.5rem;
+      height: 7rem; }
+
   .project {
     flex-wrap: wrap; }
-
-  .project_text {
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  .project_image {
-    width: 100%; }
-
-  .github {
-    float: none; }
-
-  .contact input {
-    width: 93%; }
-  .contact textarea {
-    width: 93%; }
-  .contact button {
-    width: 100%;
-    float: none; }
+    .project p {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left; }
+    .project img {
+      width: 100%; }
 
   .order1 {
-    order: 0; }
+    order: 0;
+    margin: 0; }
 
   .order2 {
-    order: 0; } }
+    order: 0;
+    margin: 0; }
+
+  .github {
+    justify-self: center; }
+
+  .contact input {
+    width: 100%; }
+  .contact button {
+    width: 100%;
+    float: none; } }
 
 /*# sourceMappingURL=styles.css.map */
