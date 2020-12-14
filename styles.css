@@ -220,6 +220,8 @@ p {
 .skills {
   grid-column: content-start / content-end;
   grid-row: skills / logo_display; }
+  .skills p {
+    text-align: justify; }
 
 .logo_display {
   grid-column: page-start / page-end;
@@ -392,6 +394,9 @@ p {
 
   .container {
     grid-template-columns: [page-start] 3vw [content-start] 94vw [content-end] 3vw [page-end]; }
+
+  .skills p {
+    text-align: left; }
 
   .logo_display {
     margin-left: 43rem; }

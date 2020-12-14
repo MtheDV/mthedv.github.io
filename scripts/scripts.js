@@ -31,8 +31,6 @@ function parallax(e) {
         mouseY = height/2;
     }
 
-    console.log(mouseX);
-
     if (width >= 450) {
         for (let i = 0; i < parallaxElements.length; i++) {
             let idManipulates = parallaxElements[i].id;
