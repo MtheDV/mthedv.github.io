@@ -33,6 +33,7 @@
                     <path d="M2.4436 33.5563L33.5563 2.44365" stroke="black" stroke-width="3"/>
                 </svg>
 
+                <a class="button_about">about</a>
                 <a class="button_projects">projects</a>
                 <a class="button_contact">contact me</a>
                 <a class="button_linkedin">linked in</a>
@@ -57,7 +58,7 @@
 
                 <img class="background_image slice3 parallax_element" id="0.04_0.05_-15_10" src="assets/images/slice3.svg" alt="abstract structure">
 
-                <h1 class="background_text parallax_element" id="0.055_0.07_0_0">Hey I'm Mathew de Vin;<br>student, developer, designer</h1>
+                <h1 class="background_text parallax_element" id="0.055_0.07_0_0" style="z-index: 10">Hey I'm Mathew de Vin;<br>student, developer, designer</h1>
 
                 <img class="background_image slice6 parallax_element" id="0.06_0.07_-27_0" src="assets/images/slice6.svg" alt="grey smiles repeated downwards">
 
@@ -73,9 +74,10 @@
 
         <div class="container">
             <div class="skills">
-                <h1>my skills</h1>
-                <p>Although I’m constantly learning as a student, I’ve gained skills in <strong>HTML5, CSS (SASS), JavaScript, Bootstrap</strong>. Alongside backend development languages <strong>Java Server Pages (JSP), SQL</strong>. With skills also in <strong>Java</strong> and some <strong>Python</strong> development.
-                    <br><br>Design skills developed using the <strong>Affinity Toolset (Photo, Designer, and Publisher)</strong> and <strong>Figma</strong> alongside minor knowledge with the <strong>Adobe Toolset (Photoshop and Illustrator)</strong>.</p>
+                <h1>about</h1>
+                <p>Hi I'm Mathew de Vin! Currently a student at the University of British Columbia pursuing a Bachelors in Sciences while majoring in Computer Science. Located in the Okanagan.</p>
+                <p>Although I’m constantly learning as a student, I’ve gained web development skills in <strong>HTML5, CSS (SASS), JavaScript, React</strong>. Alongside backend development languages <strong>NodeJS, ExpressJS, Java Server Pages (JSP), SQL, noSQL</strong>. With skills also in <strong>Java</strong> and some <strong>Python</strong> development.</p>
+                <p>Design skills developed using the <strong>Affinity Toolset (Photo, Designer, and Publisher)</strong> and <strong>Figma</strong> alongside minor knowledge with the <strong>Adobe Toolset (Photoshop and Illustrator)</strong>.</p>
             </div>
             <div class="logo_display">
                 <picture>
@@ -95,10 +97,6 @@
                     <img src="assets/images/random/oak2.png?nf_resize=fit&w=1" alt="logo">
                 </picture>
                 <picture>
-                    <source media="(min-width: 200px)" srcset="assets/images/random/eccu.png?nf_resize=fit&w=600">
-                    <img src="assets/images/random/eccu.png?nf_resize=fit&w=1" alt="logo">
-                </picture>
-                <picture>
                     <source media="(min-width: 200px)" srcset="assets/images/random/nature.png?nf_resize=fit&w=600">
                     <img src="assets/images/random/nature.png?nf_resize=fit&w=1" alt="logo">
                 </picture>
@@ -112,26 +110,35 @@
                 <div class="project">
                     <div class="project_text order1">
                         <h3>Exodus</h3>
-                        <p>Exodus is a game project that I worked on during my first year university, created using Java and the LibGDX framework.
-                            <br><br>Exodus is a short, simple platformer. Play as a man trying to escape. Jump through dungeons and forests, killing skeletons and evil snails. Scale from platform to platform, try to escape.</p>
+                        <p>Exodus is a game project that I worked on during my first year university, created using Java and the LibGDX framework.</p>
                         <a class="exodus_git">github</a>
                         <a class="exodus_play">google play store</a>
                     </div>
                     <picture class="order2">
-                        <source media="(min-width: 200px)" srcset="assets/images/random/exodus_screenshot.png?nf_resize=smartcrop&w=600&h=360">
+                        <source media="(min-width: 200px)" srcset="assets/images/random/exodus_screenshot.png?nf_resize=fit&w=600">
                         <img src="assets/images/random/exodus_screenshot.png?nf_resize=fit&w=1" alt="project image">
                     </picture>
                 </div>
                 <div class="project" style="margin-top: 4rem;">
                     <div class="project_text order2">
                         <h3>NECECC e-commerce website</h3>
-                        <p>A project created as part of the cosc 304 class. Required to build an e-commerce website within a 4 person team following specific guidelines.
-                            <br><br>Our goal is to give customers the opportunity to easily filter, identify and purchase the EV that fits their every need. Everyone knows you can google Elon and then buy his car, which is multiple versions of the same thing. OEM manufactures are catching on to the EV hype and NECECC is here to help you decide which car you need.</p>
+                        <p>A project created as part of the cosc 304 class. Required to build an e-commerce website within a 4 person team following specific guidelines.</p>
                         <a class="nececc_git">github</a>
                     </div>
                     <picture class="order1">
-                        <source media="(min-width: 200px)" srcset="assets/images/random/shop_screenshot.png?nf_resize=smartcrop&w=600&h=360">
+                        <source media="(min-width: 200px)" srcset="assets/images/random/shop_screenshot.png?nf_resize=fit&w=600">
                         <img src="assets/images/random/shop_screenshot.png?nf_resize=fit&w=1" alt="project image">
+                    </picture>
+                </div>
+                <div class="project" style="margin-top: 4rem;">
+                    <div class="project_text order1">
+                        <h3>remarrk.</h3>
+                        <p>Remarrk is a web app built using React on the front end, and an Express server and Cloud Firestore database on the backend. A tool for positive connections through the internet</p>
+                        <a class="remarrk_git">github</a>
+                    </div>
+                    <picture class="order2">
+                        <source media="(min-width: 200px)" srcset="assets/images/random/remarrk.jpg?nf_resize=fit&w=600">
+                        <img src="assets/images/random/remarrk.jpg?nf_resize=fit&w=1" alt="project image">
                     </picture>
                 </div>
             </div>
@@ -148,9 +155,13 @@
                     <input type="email" name="email" id="email" placeholder="email address" required><br>
                     <label for="message"></label>
                     <textarea name="message" id="message" placeholder="message" required></textarea><br>
-                    <button type="submit">send</button>
+                    <button type="submit"><a>send</a></button>
                 </form>
             </div>
+
+            <footer>
+                <img class="footer_image" src="assets/images/footer.svg" alt="abstract structure for footer">
+            </footer>
         </div>
 
         <script src="scripts/scripts.js" async></script>

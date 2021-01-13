@@ -2,18 +2,10 @@
  * created by mathew de vin
  */
 
-
 ////////////// Parallax ///////////////
 ///////////////////////////////////////
-/* pageTypes
- * 0 = home
- * 1 = projects
- */
-let pageType = 0;
-
 let parallaxElements = document.getElementsByClassName("parallax_element");
-let parallaxPage = document.querySelector(".parallax");
-let originalWidth = window.innerWidth;
+// let parallaxPage = document.querySelector(".parallax");
 
 function parallaxCalculate(height, width, mouseY, mouseX, speedX, speedY, xOffset, yOffset) {
     return [((((height - mouseY) / height * 100) - 50) * speedY) + yOffset,
@@ -39,7 +31,7 @@ function parallax(e) {
                                                 Number(idManipulates[0]), Number(idManipulates[1]), 
                                                 Number(idManipulates[2]), Number(idManipulates[3]));
             parallaxElements[i].style.transform = "translate("+ (parallaxCalc[1]) + "vw," + (parallaxCalc[0]) + "vh)";
-            parallaxElements[i].style.zIndex = i;
+            parallaxElements[i].style.zIndex = i.toString();
         }
     }
 }
@@ -67,10 +59,12 @@ exitButton.onclick = () => {
 let contactButton = document.querySelector(".button_contact");
 let linkedinButton = document.querySelector(".button_linkedin");
 let instagramButton = document.querySelector(".button_instagram");
+let aboutButton = document.querySelector(".button_about");
 let projectsButton = document.querySelector(".button_projects");
 let githubButton = document.querySelector(".button_github")
 let logo = document.querySelector(".logo");
 
+let about = document.querySelector(".skills");
 let projects = document.querySelector(".projects");
 let contact = document.querySelector(".contact");
 
@@ -85,17 +79,24 @@ const hideHeader = function() {
 }
 
 linkedinButton.onclick = () => openLink("https://www.linkedin.com/in/mathew-de-vin-705a8a198/");
-
 instagramButton.onclick = () => openLink("https://www.instagram.com/mathew_dv/");
-
 githubButton.onclick = () => openLink("https://github.com/MtheDV");
 
+function _scrollTo(selector, yOffset = 0){
+    const y = selector.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({top: y, behavior: 'smooth'});
+}
+aboutButton.onclick = () => {
+    _scrollTo(about, -60);
+    hideHeader();
+}
 contactButton.onclick = () => {
-    contact.scrollIntoView({behavior:"smooth"});
+    _scrollTo(contact, -60);
     hideHeader();
 }
 projectsButton.onclick = () => {
-    projects.scrollIntoView({behavior:"smooth"});
+    _scrollTo(projects, -60);
     hideHeader();
 }
 logo.onclick = () => {
@@ -104,6 +105,7 @@ logo.onclick = () => {
         left: 0,
         behavior: 'smooth'
     });
+    hideHeader();
 };
 backToTopButton.onclick = () => {
     window.scroll({
@@ -116,6 +118,7 @@ backToTopButton.onclick = () => {
 let exodusGit = document.querySelector(".exodus_git");
 let exodusPlay = document.querySelector(".exodus_play");
 let nececcGit = document.querySelector(".nececc_git");
+let remarrkGit = document.querySelector(".remarrk_git");
 
 exodusGit.onclick = () => {
     openLink("https://github.com/MtheDV/Exodus");
@@ -126,18 +129,21 @@ exodusPlay.onclick = () => {
 nececcGit.onclick = () => {
     openLink("https://github.com/MtheDV/ubco-cosc304-project")
 }
+remarrkGit.onclick = () => {
+    openLink("https://github.com/JadenBalogh/remarrk")
+}
 ///////////////////////////////////////
 
 
 // SCROLL TO CHANGE PARALLAX OPACITY //
 ///////////////////////////////////////
 window.addEventListener("scroll", () => {
-    var scrollY = window.scrollY;
-    var winHeight = window.innerHeight;
-    if (scrollY > winHeight/2)
-        parallaxPage.style.opacity = "0.0";
-    else
-        parallaxPage.style.opacity = "1.0";
+    let scrollY = window.scrollY;
+    let winHeight = window.innerHeight;
+    // if (scrollY > winHeight/2)
+    //     parallaxPage.style.opacity = "0.0";
+    // else
+    //     parallaxPage.style.opacity = "1.0";
 
     if (scrollY > winHeight/2)
         backToTopButton.style.opacity = "1.0";

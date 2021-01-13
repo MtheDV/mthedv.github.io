@@ -49,15 +49,6 @@
   box-sizing: $property1;
 }
 
-.disable-scrollbars {
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-  }
-}
-
 * {
   @include transition(all, .3s);
 }
@@ -81,10 +72,10 @@ header {
   cursor: pointer;
 
   position: fixed;
-  top: 2rem;
+  top: 2.5rem;
   left: 2.5rem;
 
-  height: 2.75rem;
+  height: 3.5rem;
   width: auto;
 
   z-index: inherit;
@@ -96,25 +87,30 @@ header {
   z-index: inherit;
 }
 
+.button_about {
+  position: inherit;
+  top: 2.5rem;
+  right: 24.25rem;
+}
 .button_projects {
   position: inherit;
   top: 2.5rem;
-  right: 15rem;
+  right: 14.5rem;
 }
 .button_contact {
   position: inherit;
   top: 2.5rem;
-  right: 2.5rem;
+  right: 2rem;
 }
 .button_linkedin {
   position: inherit;
   bottom: 2.5rem;
-  left: 2.5rem;
+  left: 2rem;
 }
 .button_instagram {
   position: inherit;
   bottom: 2.5rem;
-  left: 13rem;
+  left: 12.5rem;
 }
 .exit_overlay {
   display: none;
@@ -132,6 +128,8 @@ a {
   font-weight: 700;
   margin-left: .5em;
   margin-right: .5em;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
 
   cursor: pointer;
 
@@ -141,7 +139,6 @@ a {
     color: dodgerblue;
   }
 
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 }
 
 h1 {
@@ -178,7 +175,7 @@ p {
 }
 
 .background_text {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -189,6 +186,7 @@ p {
   text-align: center;
   width: 49rem;
   height: 9rem;
+  border-radius: .25rem;
 
   @include transform-origin(center, center);
   @include transform(translate(0, 0));
@@ -196,7 +194,7 @@ p {
 }
 
 .background_image {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -237,13 +235,12 @@ p {
 }
 
 @keyframes bounce {
-  0% { @include transform(translateY(-1rem)) }
+  0%, 100% { @include transform(translateY(-1rem)) }
   50% { @include transform(translateY(1rem)) }
-  100% { @include transform(translateY(-1rem)) }
 }
 
 .scroll_arrow {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -264,16 +261,17 @@ p {
 // CONTAINER
 .container {
   display: grid;
-  grid-template-columns: [page-start] 10vw [content-start] 80vw [content-end] 10vw [page-end];
-  grid-template-rows: [skills] auto [logo_display] auto [proj] auto [github] auto [contact] auto [page-end];
-  gap: 6rem 0;
+  grid-template-columns: [page-start] 25vw [content-start] 50vw [content-end] 25vw [page-end];
+  grid-template-rows: [skills] auto [logo_display] auto [proj] auto [github] auto [contact] auto [footer] auto [page-end];
+  gap: 8rem 0;
   justify-items: center;
 
   position: absolute;
-  top: 115%;
+  top: 105%;
   left: 0;
   right: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 // CONTAINER
 
@@ -290,7 +288,7 @@ p {
 
 // LOGOS
 .logo_display {
-  grid-column: page-start / page-end;
+  grid-column: content-start / content-end;
   grid-row: logo_display / proj;
 
   display: flex;
@@ -315,10 +313,11 @@ p {
 
   a {
     font-size: 1.5rem;
+    margin: 1rem 1rem 0 0;
   }
 
   img {
-    width: 50rem;
+    width: 35rem;
     height: auto;
     margin-top: 2rem;
   }
@@ -337,6 +336,7 @@ p {
 
 // GITHUB
 .github {
+  font-size: 1.5rem;
   grid-column: content-start / content-end;
   grid-row: github / contact;
   justify-self: end;
@@ -357,36 +357,48 @@ p {
     padding: .25rem .5rem .25rem;
     margin-bottom: 2rem;
     border: 0.35rem solid black;
+    border-radius: 0.25rem;
     @include box-sizing(border-box);
   }
 
   textarea {
+    font: inherit;
     font-size: 1.25rem;
     width: 100%;
     height: 24rem;
     padding: .5rem;
     margin-bottom: 2rem;
     border: 0.35rem solid black;
+    border-radius: 0.25rem;
     @include box-sizing(border-box);
   }
 
   button {
-    font-weight: 700;
     font-size: 2rem;
-    float: right;
+    background-color: transparent;
     border: none;
-
-    background-color: black;
-    color: white;
-    &:hover {
-      color: dodgerblue;
-    }
-
-    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-    margin-bottom: 2.5rem;
+    float: right;
   }
 }
 // CONTACT FORM
+
+// FOOTER
+footer {
+  grid-column: page-start / page-end;
+  grid-row: footer / page-end;
+
+  width: 100%;
+  margin-top: 22rem;
+  margin-bottom: -2rem;
+
+  .footer_image {
+    width: 100%;
+    height: auto;
+  }
+
+  z-index: -1;
+}
+// FOOTER
 
 
 @media screen and (max-width: 450px) {
@@ -408,7 +420,7 @@ p {
   }
 
   .header_buttons {
-    display: none;
+    display: block;
     position: fixed;
     background-color: white;
     top: 0;
@@ -422,30 +434,37 @@ p {
       color: black;
     }
   }
-  .button_projects {
+  .button_about {
     position: inherit;
     top: 25%;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .button_contact {
+  .button_projects {
     position: inherit;
     top: 40%;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .button_linkedin {
+  .button_contact {
     position: inherit;
     top: 55%;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .button_instagram {
+  .button_linkedin {
     position: inherit;
     top: 70%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .button_instagram {
+    position: inherit;
+    top: 85%;
     left: 0;
     right: 0;
     margin: auto;
@@ -483,7 +502,7 @@ p {
     display: block;
     position: absolute;
     top: 20%;
-    left: 3vw;
+    left: 5vw;
     right: 0;
     height: 150%;
     overflow-x: hidden;
@@ -503,7 +522,7 @@ p {
   }
 
   .container {
-    grid-template-columns: [page-start] 3vw [content-start] 94vw [content-end] 3vw [page-end];
+    grid-template-columns: [page-start] 5vw [content-start] 90vw [content-end] 5vw [page-end];
   }
 
   .skills {
@@ -513,7 +532,7 @@ p {
   }
 
   .logo_display {
-    margin-left: 43rem;
+    margin-left: 20rem;
     img {
       margin: 0.5rem;
       height: 7rem;
@@ -555,9 +574,16 @@ p {
     }
 
     button {
-      width: 100%;
-      float: none;
+      margin-bottom: 5rem;
     }
   }
 
+  footer {
+    margin-top: -5rem;
+
+    .footer_image {
+      width: 500%;
+      height: auto;
+    }
+  }
 }
